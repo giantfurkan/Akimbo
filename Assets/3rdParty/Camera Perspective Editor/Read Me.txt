@@ -1,0 +1,136 @@
+Thank you for purchasing Camera Perspective Editor
+by Art Leaping
+
+Version: 1.3.8
+Intended for Unity 4.0.0f7 or later
+
+
+—————————————————————
+Website:
+
+Visit http://artleaping.com/tools/cameraperspectiveeditor/
+
+
+—————————————————————
+Required Assets:
+The only assets required for Camera Perspective Editor to work are in the directory:
+Camera Perspective Editor > Scripts
+
+The assets in other directories are only included for demonstration and ease-of-setup purposes, and may also be used in your projects as desired.
+
+
+—————————————————————
+Standard Use:
+
+1) To set up your own custom perspectives from scratch, simply add the CameraPerspectiveEditor script or component to a Game Object which already has a camera component attached.
+
+Alternatively, if you add Camera Perspective Editor to an object with no Camera component, it will add a default one for you.
+
+2) Once the component is added, you are free to begin modifying the camera’s perspective both in the CameraPerspectiveEditor component, as well as in the standard Camera component.
+
+Changing fields in either component will not break the other.  Camera Perspective Editor has been implemented such that your standard approach to modifying Unity Cameras is maintained, while also being enhanced by the addition of new tweakable features.
+
+
+—————————————————————
+Demonstration Videos:
+
+Initial Release Overview: http://youtu.be/zChDimye7hs
+Dolly Zoom: http://youtu.be/_pj_ZQk6hLo
+
+
+—————————————————————
+Preconfigured Prefabs:
+
+There are several prefabs located in the directory:
+Camera Perspective Editor > Preconfigured Cameras
+
+The prefabs include setups for:
+• Standard Perspective
+• Dolly Zoom (Targeted by Default)
+• Tilt-Shift
+• Oblique Gentleman
+• Oblique Top
+• Oblique Frontal
+• Oblique Dimetric
+• Oblique 3 Quarter
+• Isometric
+
+
+—————————————————————
+Classic 2.5D First Person Shooter sample:
+
+Also included is a script for simulating classic, Dark Forces or Marathon, era camera controls.  In these older FPS games, the camera did not actually tilt when looking up or down; instead, it shifted the back-plane of the view frustum much like a tilt-shift lens on a real-world camera.  This gives the illusion of looking up or down, while the perspective’s foreshortening remains only on the horizontal plane.
+
+Similarly, this effect is also often used for racing games.  The rear frustum plane is shifted upwards, giving the player the impression that they are moving faster, while still maintaining normal perspective.  It also allows the car to be positioned near the bottom of the screen while keeping the distant road near the center of the screen.
+
+The script for this camera controller is located in the directory:
+Camera Perspective Editor > Examples > Scripts
+
+—————————————————————
+Example Scenes:
+
+Example scenes are included for each of the preconfigured prefabs, as well as the Classic 2.5D FPS camera controller.  They are located in the directory:
+Camera Perspective Editor > Examples
+with the exception of the Classic 2.5D FPS example, which is in the directory:
+Standard Assets > Character Controllers
+
+
+
+—————————————————————
+Version Notes:
+
+1.3.8 - 2015-09-22: Gizmo Cleanup
+- When Position Shift values are non-zero, a yellow camera frustum is now drawn in the scene view to accurately represent the modified projection.
+- When Dollow Zoom is non-zero, a yellow camera frustum is now drawn in the scene view to accurately represent the modified projection.
+- Unity 5.x or earlier versions areno longer supported, Use 2017.1 or later, use 2017.1 or later to access the latest features.
+
+1.3.7 - 2015-09-22: Bugfix & Compatibility Update.
+- Removed some Debug Logs which were left in by mistake in 1.3.6.
+- Unity 5.0.0 and later: Updated the lightmapping in the example scenes use Enlighten.
+- Unity 5.2.0 and later: changed the behavior or the Scene-View red frustum lines to show the unmodified frustum, as Unity now properly updates the standard frustum to show modified projection matrices.
+
+1.3.6 - 2015-01-16: Bugfix.
+- Fixed bug in the "WorldToViewportPoint()" and "WorldToScreenPoint()" methods which previously caused the returned positions to be inaccurate.
+
+1.3.5 - 2014-12-07: Bugfix.
+- Fixed a really stupid mistake in the "ViewportPointToRay()" method which previously caused the returned ray origin to be inaccurate - really sorry about that!
+
+1.3.4 - 2014-10-12: Interface Code Cleanup.
+- Switched out some parts of the Editor script UI to use more standardized UnityEditor classes/methods.
+
+1.3.3 - 2014-10-12: Feature & Fix Release.
+- Added the methods "WorldToScreenPoint()" and "WorldToViewportPoint()" to the CameraPerspectiveEditor class.
+	* The standard "WorldToScreenPoint()" and "WorldToViewportPoint()" methods in the Camera class do not work with orthographic cameras that have been modified by Camera Perspective Editor, so these new methods act as replacements and will work with both Perspective and Orthographic camera setups.
+- Fixed the methods "ScreenPointToRay()" and "ViewportPointToRay()" in the CameraPerspectiveEditor class  when working with orthographic cameras.  They will now create properly-directed rays.
+- Fixed an issue causing the "Dolly Zoom" "Focal Distance" to revert to default values while no "Focal Target" is selected.
+
+1.3.2 - 2014-07-07: Feature Improvement.
+- When the Camera component is set to Orthographic mode, "Lens Shift" offsets will no be applied in world-units instead of frustum-units.
+	* This change allows Orthographic cameras to properly zoom by changing the Orthographic Size on the Camera component.
+	* Upgrade Note: If you were previously using "Lens Shift" with an Orthographic Camera component, you will need to adjust the offset values unless your Orthographic Size was previously set to 1.
+	* Upgrade Note: All preconfigured camera prefabs and example scenes have been updated to accomodate for this change.
+
+1.3.1 - 2014-07-07: Fix Release.
+- Resubmitted using Unity 4.0.0f7 to broaden compatibility.
+
+1.3.0 - 2014-07-07: Feature Release.
+- Added the methods "ScreenPointToRay()" and "ViewportPointToRay()" to the CameraPerspectiveEditor class.
+	* The standard "ScreenPointToRay()" and "ViewportPointToRay()" methods in the Camera class do not work with orthographic cameras that have been modified by Camera Perspective Editor, so these new methods act as replacements and will work with both Perspective and Orthographic camera setups.
+	* Since the Camera class also does not work properly with "OnMouse" methods when orthographic projection matrices have been modified, these new methods can be used to build your own custom cursor-raycasting system.
+
+1.2.0 - 2014-04-30: Feature Release & Feature Replacement.
+- Added "Dolly Zoom" section, which allows for simulation of "Trombone" camera zooms without actually moving or zooming the camera at all.
+	* As the "Dolly Zoom" variable approaches 1, the Dolly Zoom effect approaches an orthographic perspective.
+	* The "Focal Distance" variable defines the depth/distance at which objects should maintain the same screen-relative size throughout the dolly zoom adjustment.
+	* The "Focal Target" variable, if set, will automatically update the "Focal Distance" based on its distance from the camera.
+	* Note: "Dolly Zoom" does not work with Orthographic Cameras, but it can be used to create orthographic perspectives by setting the "Dolly Zoom" variable to 1.
+- Replaced "Aspect Offset" with "Aspect Scale", as it provides more accurate and useful functionality and does not distort with viewport ratio changes.
+	* Upgrade Note: If you were using "Aspect Offset" previously, you will need to adjust the new "Aspect Scale" settings such that you get the same results as your old settings.  The numbers will not match.
+
+1.1.1 - 2014-04-02: Feature & Bugfix Release.
+- Added "Proportional To Aspect" option to Lens Shift.
+	* When inactive, the offset distance of the horizontal matches the offset of the vertical.
+	* When active, it behaves as previously set up, where the wider/taller axis will move proportionally more than the other.
+- Fixed aspect ratio updating by using OnPreCull() instead of LateUpdate().
+
+1.0.0 - 2014-03-25: Initial Release.

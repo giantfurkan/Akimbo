@@ -1,0 +1,35 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2bafa920971b6114ab6fd7a0e545bfa6, type: 3}
+  m_Name: LevelInfoAsset
+  m_EditorClassIdentifier: 
+  levelInfos:
+  - enemyCount: 2
+    enemies:
+    - {fileID: 8008220648559628818, guid: bbbf768595574374fa9806ef6a9ec865, type: 3}
+    obstacleDesign: {fileID: 6204062427230952859, guid: 41e50f39b1c56ea4597749ac16e13ee2, type: 3}
+  - enemyCount: 6
+    enemies:
+    - {fileID: 2649384765778006383, guid: 6877659d40c901345b388c76845ee8a5, type: 3}
+    obstacleDesign: {fileID: 1867901837228511115, guid: 64bb6a176d8a8044ca428982e744dae1, type: 3}
+  - enemyCount: 4
+    enemies:
+    - {fileID: 8008220648559628818, guid: bbbf768595574374fa9806ef6a9ec865, type: 3}
+    obstacleDesign: {fileID: 6204062427230952859, guid: 41e50f39b1c56ea4597749ac16e13ee2, type: 3}
+  - enemyCount: 5
+    enemies:
+    - {fileID: 8008220648559628818, guid: bbbf768595574374fa9806ef6a9ec865, type: 3}
+    obstacleDesign: {fileID: 2224811864934652646, guid: 1ff803cb2e3581449b96126bf445c5f7, type: 3}
+  - enemyCount: 5
+    enemies:
+    - {fileID: 8008220648559628818, guid: bbbf768595574374fa9806ef6a9ec865, type: 3}
+    obstacleDesign: {fileID: 2224811864934652646, guid: 1ff803cb2e3581449b96126bf445c5f7, type: 3}
