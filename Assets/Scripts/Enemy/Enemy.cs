@@ -30,6 +30,8 @@ public class Enemy : Entity
         enemyHandler.RemoveEnemy(this);
         Destroy(gameObject);
 
+        player.AddExp(experienceDrop);
+
 
     }
 

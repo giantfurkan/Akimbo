@@ -76,6 +76,7 @@ GameObject:
   - component: {fileID: 2649384765778006371}
   - component: {fileID: 2649384765778006383}
   - component: {fileID: 5495991858329567996}
+  - component: {fileID: 701767537050236887}
   m_Layer: 0
   m_Name: EnemyFive
   m_TagString: Enemy
@@ -187,7 +188,7 @@ MonoBehaviour:
   randomTime: 0
   coinsToDrop: 100
   experienceDrop: 100
-  radius: 15
+  radius: 2
   shadow: {fileID: 1333698833569753976, guid: b36031f0184473842b2e20b7d267ae7c, type: 3}
 --- !u!195 &5495991858329567996
 NavMeshAgent:
@@ -211,6 +212,19 @@ NavMeshAgent:
   m_BaseOffset: 1
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
+--- !u!65 &701767537050236887
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2649384765778006370}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1.0000001, y: 2, z: 1.0000002}
+  m_Center: {x: 0.000000059604645, y: 0, z: -0.00000008940697}
 --- !u!1001 &214589951323863987
 PrefabInstance:
   m_ObjectHideFlags: 0

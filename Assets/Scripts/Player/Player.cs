@@ -14,9 +14,10 @@ public class Player : Entity
 
     InputDataSO input;
 
-    [SerializeField] private int level, maxLevel;
-    [SerializeField] private int currentExp;
-    [SerializeField] private int[] nextLevelExp;
+    [SerializeField] public static int level;
+    [SerializeField] private int maxLevel;
+    [SerializeField] public static int currentExp;
+    [SerializeField] public static int[] nextLevelExp;
 
     protected new void Awake()
     {
@@ -32,11 +33,12 @@ public class Player : Entity
     }
     private void Start()
     {
+        level = 1;
         maxLevel = 10;
         nextLevelExp = new int[maxLevel + 1];
         nextLevelExp[1] = 1000;
 
-        for (int i = 1; i < maxLevel; i++)
+        for (int i = 2; i < maxLevel; i++)
         {
             nextLevelExp[i] = Mathf.RoundToInt(nextLevelExp[i - 1] * 1.1f);
         }
@@ -57,20 +59,20 @@ public class Player : Entity
         }
     }
 
+    public static float GetExperienceNormalized()
+    {
+        return (float)currentExp / nextLevelExp[level];
+    }
+
     protected void Update()
     {
         CheckMovementState(input.value);
-
-        if (Input.GetKeyDown(KeyCode.D))
-        {
-            AddExp(200);
-            Debug.Log(level);
-        }
     }
 
-    private void AddExp(int amount)
+    public void AddExp(int amount)
     {
         currentExp += amount;
+
         if (currentExp >= nextLevelExp[level] && level < maxLevel)
         {
             LevelUp();
@@ -84,8 +86,8 @@ public class Player : Entity
 
     private void LevelUp()
     {
-        level++;
         currentExp -= nextLevelExp[level];
+        level++;
 
         maxHp = Mathf.RoundToInt(maxHp * 1.2f);
         damage = Mathf.CeilToInt(damage * 1.1f);

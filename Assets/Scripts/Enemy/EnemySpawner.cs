@@ -4,7 +4,7 @@ using UnityEngine;
 [RequireComponent(typeof(EnemyHandler))]
 public class EnemySpawner : MonoBehaviour
 {
-    private const float overlapSphereRadius = 0.5f;
+    private const float overlapSphereRadius = 1f;
 
     private EnemyHandler enemyHandler;
 
@@ -30,7 +30,7 @@ public class EnemySpawner : MonoBehaviour
             do
             {
                 loopBreaker++;
-                spawnPos = new Vector3(Random.Range(-4.5f, 4.5f), 0.51f, Random.Range(-2f, 9.5f)); // If each level has a different scale, variables must take from SO or Prefabs
+                spawnPos = new Vector3(Random.Range(-4.5f, 4.5f), 0.51f, Random.Range(-2f, 9.5f)); // If each level has a different scale, variables can take from SO or Prefabs
             } while (CheckCollisions(spawnPos) && loopBreaker < 100); // If there is no spawn position, it maybe try to endless forever
 
             if(loopBreaker < 100)
@@ -46,5 +46,10 @@ public class EnemySpawner : MonoBehaviour
     {
         Collider[] hitColliders = Physics.OverlapSphere(pos, overlapSphereRadius);
         return hitColliders.Length > 0;
+    }
+
+    private bool CheckDist(Vector3 pos)
+    { 
+        return true;
     }
 }

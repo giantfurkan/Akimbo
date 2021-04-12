@@ -29,16 +29,16 @@ public class EnemyFive : RandomWalkingEnemy
     {
         while (hp > 0)
         {
-            yield return new WaitForSeconds(Random.Range(.5f, 1f));
+            yield return new WaitForSeconds(.2f);
             if (aimer.Target != null)
             {
                 shooter.Shoot(new DamageReport(damage, this));
             }
-            yield return new WaitForSeconds(Random.Range(2,2.5f));
-            Vector3 newPos = GetRandomPoint(transform, radius);
+            yield return new WaitForSeconds(2f);
+            Vector3 newPos = GetRandomPoint(enemyHandler, transform, 12);
             var asd = Instantiate(shadow);
             asd.transform.position = newPos;
-            yield return new WaitForSeconds(Random.Range(.5f,1f));
+            yield return new WaitForSeconds(.2f);
             Destroy(asd);
             transform.position = newPos;
         }
@@ -53,6 +53,7 @@ public class EnemyFive : RandomWalkingEnemy
         else if (!aimer.IsVisible())
             aimer.ResetTarget();
         aimer.FollowTarget();
+
 
     }
 }

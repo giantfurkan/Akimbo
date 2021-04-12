@@ -14,7 +14,7 @@ public class EnemyThree : RandomWalkingEnemy
     {
         if (!agent.hasPath)
         {
-            agent.SetDestination(GetRandomPoint(transform, radius));
+            agent.SetDestination(GetRandomPoint(enemyHandler, transform, radius));
         }
     }
 
