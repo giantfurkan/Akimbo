@@ -508,10 +508,14 @@ MonoBehaviour:
   hp: 0
   attackSpeed: 3
   damage: 10
+  damagePopUp: {fileID: 0}
+  petPrefab: {fileID: 3324555439535177514, guid: 80ed1ff9b9035084ba8f72961bcc2359, type: 3}
+  coins: 0
   onPlayerDeath:
     m_PersistentCalls:
       m_Calls: []
-  coins: 0
+  anim: {fileID: 0}
+  moveMagnitude: 0
 --- !u!1 &3932483326995883024
 GameObject:
   m_ObjectHideFlags: 0

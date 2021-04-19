@@ -476,6 +476,7 @@ MonoBehaviour:
   attackSpeed: 5
   damage: 35
   damagePopUp: {fileID: 0}
+  petPrefab: {fileID: 3324555439535177514, guid: 80ed1ff9b9035084ba8f72961bcc2359, type: 3}
   coins: 0
   onPlayerDeath:
     m_PersistentCalls:

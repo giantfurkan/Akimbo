@@ -9,6 +9,8 @@ public class Player : Entity
     public static Player Instance;
     protected PlayerAimer aimer;
     
+    public PetController petPrefab;
+    
     public static int level;
     public static int currentExp;
     public static int[] nextLevelExp;
@@ -51,6 +53,10 @@ public class Player : Entity
         {
             nextLevelExp[i] = Mathf.RoundToInt(nextLevelExp[i - 1] * 1.1f);
         }
+
+        var petClone = Instantiate(petPrefab, transform.parent);
+        petClone.targetPlayer = this;
+        petClone.transform.position = transform.position + new Vector3(2, 0, -2);
     }
     protected void FixedUpdate()
     {
