@@ -205,17 +205,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1358708597 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 2560130041198225495, guid: 2973112a1f124c449ab77fe47b1766ec, type: 3}
-  m_PrefabInstance: {fileID: 2560130039858403106}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f601e8772ce2c9c4a8af915a077924e0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &1425334476 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 151157426358436511, guid: f2d0fd1f6555fe94ea4f281b1712a993, type: 3}
@@ -443,14 +432,6 @@ PrefabInstance:
       propertyPath: joystick
       value: 
       objectReference: {fileID: 1425334476}
-    - target: {fileID: 2400356501855339658, guid: acd4c79dbb55a0443b6ce744d4b659f5, type: 3}
-      propertyPath: gameState
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2400356501855339658, guid: acd4c79dbb55a0443b6ce744d4b659f5, type: 3}
-      propertyPath: enemySpawner
-      value: 
-      objectReference: {fileID: 1358708597}
     - target: {fileID: 2400356501855339658, guid: acd4c79dbb55a0443b6ce744d4b659f5, type: 3}
       propertyPath: levelManager
       value: 

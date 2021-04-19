@@ -21,22 +21,27 @@ public abstract class Entity : MonoBehaviour
     public float Speed
     {
         get { return speed; }
+        set { speed = value; }
     }
     public float MaxHp
     {
         get { return maxHp; }
+        set { maxHp = value; }
     }
     public float Hp
     {
         get { return hp; }
+        set { hp=value; }
     }
     public float AttackSpeed
     {
         get { return attackSpeed; }
+        set { attackSpeed = value; }
     }
     public float Damage
     {
         get { return damage; }
+        set { damage = value; }
     }
     protected void Awake()
     {

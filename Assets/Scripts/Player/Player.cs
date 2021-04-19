@@ -4,32 +4,34 @@ using UnityEngine.Events;
 
 public class Player : Entity
 {
-    public static Player instance;
-
+    public static Player Instance;
     protected PlayerAimer aimer;
 
-    [SerializeField] UnityEvent onPlayerDeath;
+    public static int level;
+    public static int currentExp;
+    public static int[] nextLevelExp;
+    private int maxLevel;
 
     public delegate void OnLevelUp();
     public static event OnLevelUp onLevelUp;
 
     [SerializeField] long coins = 0;
 
+    [SerializeField] UnityEvent onPlayerDeath;
+
     InputDataSO input;
 
-    public static int staticDamage = 50;
+    [SerializeField] Animator anim;
+    [SerializeField] float moveMagnitude;
 
-    [SerializeField] public static int level;
-    [SerializeField] private int maxLevel;
-    [SerializeField] public static int currentExp;
-    [SerializeField] public static int[] nextLevelExp;
 
     protected new void Awake()
     {
-        instance = this;
-
-
         base.Awake();
+
+
+        if (anim == null)
+            anim = GetComponentInChildren<Animator>();
 
         if (input == null)
             input = Resources.Load<InputDataSO>("Input");
@@ -69,24 +71,14 @@ public class Player : Entity
     {
         CheckMovementState(input.value);
 
-        if(Input.GetKeyDown(KeyCode.L))
-        {
-            Debug.Log(staticDamage + "static");
-        }
-        if (Input.GetKeyDown(KeyCode.Q))
-        {
-            staticDamage++;
-        }
+        moveMagnitude = input.value.magnitude;
+        anim.SetFloat("MoveSpeed", moveMagnitude);
+
     }
 
     public static float GetExperienceNormalized()
     {
         return (float)currentExp / nextLevelExp[level];
-    }
-
-    public void DamageUp(int amount)
-    {
-        staticDamage = Mathf.CeilToInt(staticDamage * amount);
     }
 
     public void AddExp(int amount)
@@ -112,7 +104,7 @@ public class Player : Entity
         level++;
 
         maxHp = Mathf.RoundToInt(maxHp * 1.2f);
-        staticDamage = Mathf.CeilToInt(damage * 1.1f);
+        damage = Mathf.CeilToInt(damage * 1.1f);
     }
 
     private void CheckMovementState(Vector2 direction)
