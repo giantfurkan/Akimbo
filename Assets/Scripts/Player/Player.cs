@@ -1,17 +1,19 @@
 using System;
+using DefaultNamespace;
 using UnityEngine;
 using UnityEngine.Events;
 
 public class Player : Entity
 {
+    
     public static Player Instance;
     protected PlayerAimer aimer;
-
+    
     public static int level;
     public static int currentExp;
     public static int[] nextLevelExp;
     private int maxLevel;
-
+    
     public delegate void OnLevelUp();
     public static event OnLevelUp onLevelUp;
 
@@ -28,8 +30,7 @@ public class Player : Entity
     protected new void Awake()
     {
         base.Awake();
-
-
+        
         if (anim == null)
             anim = GetComponentInChildren<Animator>();
 
@@ -126,5 +127,39 @@ public class Player : Entity
     public void AddCoins(int amount)
     {
         coins += amount;
+    }
+
+    public void UseAbility(AbilityData target)
+    {
+        switch (target.myType)
+        {
+            case AbilityData.AbilityType.CriticalChance:
+                // todo buraya kritik degerini attir asagidakiler gibi.
+                break;
+            case AbilityData.AbilityType.AttackSpeed:
+                AttackSpeed += target.value;
+                break;
+            case AbilityData.AbilityType.AttackDamage:
+                Damage += target.value;
+                break;
+            case AbilityData.AbilityType.Health:
+                Hp += target.value;
+                MaxHp += target.value;
+                break;
+            case AbilityData.AbilityType.MoveSpeed:
+                Speed += target.value;
+                break;
+            case AbilityData.AbilityType.Shield:
+                //todo shield ac value suresi olur.
+                break;
+            case AbilityData.AbilityType.Fire:
+                //todo Fire
+                break;
+            case AbilityData.AbilityType.Lightning:
+                //todo Lightning
+                break;
+            default:
+                throw new ArgumentOutOfRangeException();
+        }
     }
 }

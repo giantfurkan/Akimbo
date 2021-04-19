@@ -42,7 +42,7 @@ public class GameManager : Singleton<GameManager>
         {
             case GameState.Init:
                 if (currentPlayer == null)
-                    currentPlayer = Resources.Load<Player>("Archer").GetComponent<Player>();
+                    currentPlayer = Resources.Load<Player>("Gunner").GetComponent<Player>();
                 break;
             case GameState.Started:
                 if (currentPlayer != null)

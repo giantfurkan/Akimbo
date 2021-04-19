@@ -309,7 +309,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2d7a013e65e687e499b35b6e8bff53d9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  shellPrefab: {fileID: 2373098335062580332, guid: 727063eca54d0e54dab45bead7146cb4, type: 3}
+  shellPrefab: {fileID: 2373098335062580332, guid: 7e2ab746284071145ae2f7873a8516a8, type: 3}
   poolSize: 7
 --- !u!114 &2296016700250392842
 MonoBehaviour:
