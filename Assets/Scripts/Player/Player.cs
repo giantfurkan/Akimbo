@@ -16,6 +16,8 @@ public class Player : Entity
     public static int[] nextLevelExp;
     private int maxLevel;
     
+    
+    
     public delegate void OnLevelUp();
     public static event OnLevelUp onLevelUp;
 
@@ -135,6 +137,7 @@ public class Player : Entity
         coins += amount;
     }
 
+    //todo abilitySo den doldur istediklerini level sistemi gibi
     public void UseAbility(AbilityData target)
     {
         switch (target.myType)

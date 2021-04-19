@@ -61,4 +61,10 @@ public class Shooter : MonoBehaviour
             ResizePool(poolSize);
         }
     }
+
+    public void Shoot(DamageReport damageReport,Gunner target)
+    {
+        Shoot(damageReport);
+        target.IncreaseBonus();
+    }
 }
