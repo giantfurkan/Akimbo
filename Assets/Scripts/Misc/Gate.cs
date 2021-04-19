@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Gate : MonoBehaviour
 {
-    [SerializeField]List<GameObject> gateDoor;
+    [SerializeField] List<GameObject> gateDoor;
 
     public delegate void NextLevel();
     public static event NextLevel handleNextLevel;
@@ -17,17 +17,18 @@ public class Gate : MonoBehaviour
     private void OnDisable()
     {
         EnemyHandler.levelCleared -= GateOpen;
+
     }
     private void Awake()
     {
-        foreach(Transform child in transform)
+        foreach (Transform child in transform)
         {
             gateDoor.Add(child.gameObject);
         }
     }
     private void GateOpen()
     {
-       foreach(var door in gateDoor)
+        foreach (var door in gateDoor)
         {
             door.SetActive(false);
         }

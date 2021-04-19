@@ -6,8 +6,12 @@ using UnityEngine.SceneManagement;
 
 public class LevelManager : MonoBehaviour
 {
-    private int currentLevelIndex = 0;
     public int CurrentLevelIndex { get { return currentLevelIndex; } }
+
+    [SerializeField] Animator transition;
+    [SerializeField] float transitionTime = 1f;
+
+    private int currentLevelIndex = 0;
 
     LevelInfoAssetSO levelInfoAsset;
 
@@ -23,6 +27,7 @@ public class LevelManager : MonoBehaviour
     {
         currentLevelIndex = SceneManager.GetActiveScene().buildIndex;
         levelInfoAsset = Resources.Load<LevelInfoAssetSO>("Level/LevelInfoAsset");
+        transition = GetComponentInChildren<Animator>();
     }
 
     public void HandleCreateNextLevel()
@@ -30,12 +35,22 @@ public class LevelManager : MonoBehaviour
         ++currentLevelIndex;
         if (levelInfoAsset.levelInfos.Count >= currentLevelIndex)
         {
-            CreateNextLevel();
+            LoadNextLevel(currentLevelIndex);
         }
     }
 
-    private void CreateNextLevel()
+    public void LoadNextLevel(int level)
     {
-        SceneManager.LoadScene(currentLevelIndex);
+        StartCoroutine(LoadLevel(level));
+    }
+
+    IEnumerator LoadLevel(int level)
+    {
+        transition.SetTrigger("Start");
+
+        yield return new WaitForSeconds(transitionTime);
+
+        SceneManager.LoadScene(level);
+
     }
 }
