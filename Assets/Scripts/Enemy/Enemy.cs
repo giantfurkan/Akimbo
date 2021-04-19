@@ -17,7 +17,7 @@ public class Enemy : Entity
     {
         base.Awake();
 
-        player = Player.instance;
+        player = GameManager.Instance.Clone;
         enemyHandler = FindObjectOfType<EnemyHandler>();
     }
     protected override void Death(Entity killer)

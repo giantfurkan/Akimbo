@@ -16,7 +16,7 @@ public class CameraMovement : MonoBehaviour
         if (GameManager.CurrentGameState == GameState.Started)
         {
             if (player == null)
-                player = Player.instance.transform;
+                player = GameManager.Instance.Clone.transform;
 
             if (Mathf.Abs(player.transform.position.z - transform.position.z) > cameraCatchUpDistance)
                 cameraDestination = new Vector3(transform.position.x, transform.position.y, player.transform.position.z);

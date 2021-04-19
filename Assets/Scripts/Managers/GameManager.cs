@@ -1,4 +1,3 @@
-using System.Collections.Generic;
 using UnityEngine;
 
 public enum GameState
@@ -28,8 +27,6 @@ public class GameManager : Singleton<GameManager>
 
     private new void Awake()
     {
-        //currentGameState = GameState.Started; // FOR TEST
-
         base.Awake();
 
         levelManager = FindObjectOfType<LevelManager>();
@@ -45,7 +42,7 @@ public class GameManager : Singleton<GameManager>
         {
             case GameState.Init:
                 if (currentPlayer == null)
-                    currentPlayer = Resources.Load<Player>("Archer").GetComponent<Player>();       
+                    currentPlayer = Resources.Load<Player>("Archer").GetComponent<Player>();
                 break;
             case GameState.Started:
                 if (currentPlayer != null)
@@ -59,23 +56,12 @@ public class GameManager : Singleton<GameManager>
     public void Restart()
     {
         currentGameState = GameState.Init;
-        //TODO restart level 
     }
 
     public void StartGame()
     {
         levelManager.HandleCreateNextLevel();
         currentGameState = GameState.Started;
-    }
-
-    private void Update()
-    {
-        // For Test
-        if (Input.GetKeyDown(KeyCode.F))
-        {
-            enemySpawner.SpawnEnemies(levelInfoAsset.levelInfos[levelManager.CurrentLevelIndex]);
-            obstacleSpawner.SpawnObstacles(levelInfoAsset.levelInfos[levelManager.CurrentLevelIndex]);
-        }
     }
 
     public void SelectPlayer(Player playerType)
