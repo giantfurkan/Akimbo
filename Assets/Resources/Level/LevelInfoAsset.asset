@@ -20,7 +20,7 @@ MonoBehaviour:
   - enemyCount: 6
     enemies:
     - {fileID: 2649384765778006383, guid: 6877659d40c901345b388c76845ee8a5, type: 3}
-    obstacleDesign: {fileID: 1867901837228511115, guid: 64bb6a176d8a8044ca428982e744dae1, type: 3}
+    obstacleDesign: {fileID: 529213192925656427, guid: f26f09cbeb8991d40975eaae76da3e7f, type: 3}
   - enemyCount: 4
     enemies:
     - {fileID: 8008220648559628818, guid: bbbf768595574374fa9806ef6a9ec865, type: 3}

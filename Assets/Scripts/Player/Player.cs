@@ -10,9 +10,14 @@ public class Player : Entity
 
     [SerializeField] UnityEvent onPlayerDeath;
 
+    public delegate void OnLevelUp();
+    public static event OnLevelUp onLevelUp;
+
     [SerializeField] long coins = 0;
 
     InputDataSO input;
+
+    public static int staticDamage = 50;
 
     [SerializeField] public static int level;
     [SerializeField] private int maxLevel;
@@ -22,6 +27,7 @@ public class Player : Entity
     protected new void Awake()
     {
         instance = this;
+
 
         base.Awake();
 
@@ -59,14 +65,28 @@ public class Player : Entity
         }
     }
 
+    protected void Update()
+    {
+        CheckMovementState(input.value);
+
+        if(Input.GetKeyDown(KeyCode.L))
+        {
+            Debug.Log(staticDamage + "static");
+        }
+        if (Input.GetKeyDown(KeyCode.Q))
+        {
+            staticDamage++;
+        }
+    }
+
     public static float GetExperienceNormalized()
     {
         return (float)currentExp / nextLevelExp[level];
     }
 
-    protected void Update()
+    public void DamageUp(int amount)
     {
-        CheckMovementState(input.value);
+        staticDamage = Mathf.CeilToInt(staticDamage * amount);
     }
 
     public void AddExp(int amount)
@@ -76,6 +96,8 @@ public class Player : Entity
         if (currentExp >= nextLevelExp[level] && level < maxLevel)
         {
             LevelUp();
+            onLevelUp?.Invoke();
+
         }
 
         if (level >= maxLevel)
@@ -90,7 +112,7 @@ public class Player : Entity
         level++;
 
         maxHp = Mathf.RoundToInt(maxHp * 1.2f);
-        damage = Mathf.CeilToInt(damage * 1.1f);
+        staticDamage = Mathf.CeilToInt(damage * 1.1f);
     }
 
     private void CheckMovementState(Vector2 direction)

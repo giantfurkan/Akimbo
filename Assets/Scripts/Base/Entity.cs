@@ -13,6 +13,9 @@ public abstract class Entity : MonoBehaviour
     [SerializeField] protected float hp;
     [SerializeField] protected float attackSpeed;
     [SerializeField] protected float damage;
+
+    [SerializeField] GameObject damagePopUp;
+
     protected MovingState walkingState = MovingState.Staying;
 
     public float Speed
@@ -38,6 +41,7 @@ public abstract class Entity : MonoBehaviour
     protected void Awake()
     {
         hp = MaxHp;
+        damagePopUp = Resources.Load<GameObject>("DamagaPopUp");
     }
 
     public bool TakeDamage(DamageReport damageReport)
@@ -48,6 +52,10 @@ public abstract class Entity : MonoBehaviour
             Death(damageReport.attacker);
             return true;
         }
+
+        DamageIndicator indicator = Instantiate(damagePopUp, transform.position, Quaternion.identity).GetComponent<DamageIndicator>();
+        indicator.SetDamageText((int)damageReport.damage);
+
         return false;
     }
 

@@ -442,8 +442,8 @@ CapsuleCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  m_Radius: 1
-  m_Height: 3
+  m_Radius: 0.5
+  m_Height: 1
   m_Direction: 1
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &2296016701307624515
@@ -474,13 +474,14 @@ MonoBehaviour:
   maxHp: 150
   hp: 0
   attackSpeed: 3
-  damage: 10
+  damage: 60
+  damagePopUp: {fileID: 0}
   onPlayerDeath:
     m_PersistentCalls:
       m_Calls: []
   coins: 0
   maxLevel: 10
-  range: 0
+  range: 5
 --- !u!1001 &7595145101000665433
 PrefabInstance:
   m_ObjectHideFlags: 0
