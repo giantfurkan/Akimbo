@@ -25,18 +25,15 @@ public class EnemyBoss : MonoBehaviour
 
     private void FixedUpdate()
     {
-        FireJelly();
-        
+        Fire();
     }
-
-    
     
     private void Update()
     {
         transform.rotation=Quaternion.LookRotation(transform.position-player.transform.position);
     }
 
-    private void FireJelly()
+    private void Fire()
     {
         _attackTimer += Time.fixedDeltaTime * attackRate;
         if (_attackTimer >= 1f)
