@@ -5,19 +5,19 @@ using UnityEngine.Events;
 
 public class Player : Entity
 {
-    
+
     public static Player Instance;
     protected PlayerAimer aimer;
-    
+
     public PetController petPrefab;
-    
+
     public static int level;
     public static int currentExp;
     public static int[] nextLevelExp;
     private int maxLevel;
-    
-    
-    
+
+
+
     public delegate void OnLevelUp();
     public static event OnLevelUp onLevelUp;
 
@@ -34,7 +34,7 @@ public class Player : Entity
     protected new void Awake()
     {
         base.Awake();
-        
+
         if (anim == null)
             anim = GetComponentInChildren<Animator>();
 
@@ -82,7 +82,6 @@ public class Player : Entity
 
         moveMagnitude = input.value.magnitude;
         anim.SetFloat("MoveSpeed", moveMagnitude);
-
     }
 
     public static float GetExperienceNormalized()

@@ -43,7 +43,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2d7a013e65e687e499b35b6e8bff53d9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  shellPrefab: {fileID: 643947384367455926, guid: 4da0e05a42035724aa0af7bb6601018f, type: 3}
+  shellPrefab: {fileID: 643947384367455926, guid: 35b5259e33da57945a194f97bc131a37, type: 3}
   poolSize: 3
 --- !u!1 &3699457723233242859
 GameObject:
@@ -88,7 +88,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2d7a013e65e687e499b35b6e8bff53d9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  shellPrefab: {fileID: 643947384367455926, guid: 4da0e05a42035724aa0af7bb6601018f, type: 3}
+  shellPrefab: {fileID: 643947384367455926, guid: 35b5259e33da57945a194f97bc131a37, type: 3}
   poolSize: 3
 --- !u!1 &4788409257336498561
 GameObject:
@@ -133,7 +133,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2d7a013e65e687e499b35b6e8bff53d9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  shellPrefab: {fileID: 643947384367455926, guid: 4da0e05a42035724aa0af7bb6601018f, type: 3}
+  shellPrefab: {fileID: 643947384367455926, guid: 35b5259e33da57945a194f97bc131a37, type: 3}
   poolSize: 3
 --- !u!1 &5265707420323966249
 GameObject:
@@ -236,7 +236,7 @@ SphereCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.7
+  m_Radius: 1
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &-8634023288282915879
 MonoBehaviour:
@@ -251,10 +251,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 0
-  maxHp: 150
+  maxHp: 100
   hp: 0
   attackSpeed: 0
   damage: 10
+  damagePopUp: {fileID: 0}
   player: {fileID: 0}
   enemyHandler: {fileID: 0}
   movingTime: 0
@@ -267,7 +268,7 @@ MonoBehaviour:
   - {fileID: 6283693065629218058}
   - {fileID: 3813663361392617882}
   - {fileID: 5621665452467774988}
-  reloadTimer: 3
+  reloadTimer: 4
 --- !u!195 &7894545980494715068
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -277,7 +278,7 @@ NavMeshAgent:
   m_GameObject: {fileID: 5265707420323966249}
   m_Enabled: 1
   m_AgentTypeID: 0
-  m_Radius: 0.5
+  m_Radius: 1
   m_Speed: 3.5
   m_Acceleration: 8
   avoidancePriority: 50
@@ -333,7 +334,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2d7a013e65e687e499b35b6e8bff53d9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  shellPrefab: {fileID: 643947384367455926, guid: 4da0e05a42035724aa0af7bb6601018f, type: 3}
+  shellPrefab: {fileID: 643947384367455926, guid: 35b5259e33da57945a194f97bc131a37, type: 3}
   poolSize: 3
 --- !u!1001 &2287518730842251764
 PrefabInstance:

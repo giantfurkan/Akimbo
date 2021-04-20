@@ -19,10 +19,12 @@ public class LevelManager : MonoBehaviour
     {
         Gate.handleNextLevel += HandleCreateNextLevel;
     }
+
     private void OnDisable()
     {
         Gate.handleNextLevel -= HandleCreateNextLevel;
     }
+
     private void Awake()
     {
         currentLevelIndex = SceneManager.GetActiveScene().buildIndex;
@@ -51,6 +53,5 @@ public class LevelManager : MonoBehaviour
         yield return new WaitForSeconds(transitionTime);
 
         SceneManager.LoadScene(level);
-
     }
 }

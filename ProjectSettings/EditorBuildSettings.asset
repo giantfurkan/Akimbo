@@ -20,4 +20,37 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/TestScenes/3.unity
     guid: ea32c231927102a4b8620985b7441b98
+  - enabled: 1
+    path: Assets/Scenes/TestScenes/4.unity
+    guid: 7d0140cf461c3e243bedbea8348aee31
+  - enabled: 1
+    path: Assets/Scenes/TestScenes/5.unity
+    guid: 7ef04370b5ec0e040bd9a92022ee6020
+  - enabled: 1
+    path: Assets/Scenes/TestScenes/6.unity
+    guid: 17ed97aaf0ed9d04eaf322447ce095a1
+  - enabled: 1
+    path: Assets/Scenes/TestScenes/7.unity
+    guid: 0c2f01359ab2d8d4483d29bc09e31bca
+  - enabled: 1
+    path: Assets/Scenes/TestScenes/8.unity
+    guid: 1446d01ca020430469c6fa33295885f0
+  - enabled: 1
+    path: Assets/Scenes/TestScenes/9.unity
+    guid: 144eee94c962bcd438a563cc43e72cad
+  - enabled: 1
+    path: Assets/Scenes/TestScenes/10.unity
+    guid: 4d720f5f6ad00ef4c909ff6a6f6a3b9c
+  - enabled: 1
+    path: Assets/Scenes/TestScenes/11.unity
+    guid: 96d088eb88568294d9a892f44644dddc
+  - enabled: 1
+    path: Assets/Scenes/TestScenes/12.unity
+    guid: 71ed187a462be4047b3e20e6d5e0b410
+  - enabled: 1
+    path: Assets/Scenes/TestScenes/13.unity
+    guid: f0843d40b30deb7478564fbeb88e6612
+  - enabled: 1
+    path: Assets/Scenes/TestScenes/14.unity
+    guid: 14f4a0e2246499144abdce8c852e3819
   m_configObjects: {}

@@ -216,7 +216,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 113602786}
   m_LocalRotation: {x: -0, y: 0.7071068, z: -0, w: 0.7071068}
-  m_LocalPosition: {x: 6, y: 1.1799998, z: -14}
+  m_LocalPosition: {x: 5.7, y: 1.1799998, z: -14.43}
   m_LocalScale: {x: 0.30000007, y: 1, z: 1}
   m_Children:
   - {fileID: 1350192473}
@@ -3476,7 +3476,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1120965529}
   m_Layer: 0
-  m_Name: Environment1
+  m_Name: Environment
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 6848954645196659664}
   - component: {fileID: 2876040195509334515}
   m_Layer: 6
-  m_Name: Arrow
+  m_Name: Rocket
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -30,7 +30,7 @@ Transform:
   m_GameObject: {fileID: 2373098335062580332}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.1, y: 0.1, z: 1}
+  m_LocalScale: {x: 0.05, y: 0.05, z: 0.5}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -127,4 +127,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 20
   rigidbody: {fileID: 0}
-  effect: {fileID: 106012303621799758, guid: 2f8640c91e25cd34ab8f8c9413a02b91, type: 3}
+  effect: {fileID: 4021103657954561961, guid: 7a0d5f6e29810194d86bdd3eecee9871, type: 3}

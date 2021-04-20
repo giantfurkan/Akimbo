@@ -96,10 +96,10 @@ CapsuleCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 1
   m_Enabled: 1
-  m_Radius: 1.5
+  m_Radius: 0.5
   m_Height: 2
   m_Direction: 1
-  m_Center: {x: 0.000000059604645, y: 0, z: -0.00000008940697}
+  m_Center: {x: 0, y: 1.25, z: 0}
 --- !u!195 &1193292215176425632
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -118,8 +118,8 @@ NavMeshAgent:
   m_AutoTraverseOffMeshLink: 1
   m_AutoBraking: 1
   m_AutoRepath: 1
-  m_Height: 2
-  m_BaseOffset: 1
+  m_Height: 1
+  m_BaseOffset: 0
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
 --- !u!114 &-149838017941914554
@@ -134,11 +134,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 62e976032ccaa254b9121cd47c61ebb2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 5
-  maxHp: 150
-  hp: 150
+  speed: 5.5
+  maxHp: 50
+  hp: 0
   attackSpeed: 0
   damage: 10
+  damagePopUp: {fileID: 0}
   player: {fileID: 0}
   enemyHandler: {fileID: 0}
   movingTime: 0
@@ -146,7 +147,7 @@ MonoBehaviour:
   randomTime: 0
   coinsToDrop: 100
   experienceDrop: 100
-  radius: 10
+  radius: 20
 --- !u!1001 &1193292215413420662
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -298,7 +299,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4843028258353612, guid: a81cfdb3f3b757345a955fb9947163c8, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.2
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4843028258353612, guid: a81cfdb3f3b757345a955fb9947163c8, type: 3}
       propertyPath: m_LocalPosition.z

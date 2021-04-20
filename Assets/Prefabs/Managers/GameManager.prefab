@@ -43,7 +43,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 011113e026459d048ac6d1e8f9ed58db, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  levelManager: {fileID: 0}
-  enemySpawner: {fileID: 0}
-  obstacleSpawner: {fileID: 0}
   joystick: {fileID: 0}

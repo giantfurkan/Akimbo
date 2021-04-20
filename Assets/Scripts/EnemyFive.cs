@@ -13,6 +13,7 @@ public class EnemyFive : RandomWalkingEnemy
     private float respawnTime;
 
     [SerializeField] GameObject shadow;
+    GameObject temp;
 
     private new void Awake()
     {
@@ -25,21 +26,24 @@ public class EnemyFive : RandomWalkingEnemy
 
         StartCoroutine(Cycle());
     }
+
     IEnumerator Cycle()
     {
         while (hp > 0)
         {
-            yield return new WaitForSeconds(.2f);
+            yield return new WaitForSeconds(Random.Range(.1f, .3f));
             if (aimer.Target != null)
             {
                 shooter.Shoot(new DamageReport(damage, this));
             }
-            yield return new WaitForSeconds(2f);
+
+            yield return new WaitForSeconds(Random.Range(1.2f, 2f));
             Vector3 newPos = GetRandomPoint(enemyHandler, transform, 12);
-            var asd = Instantiate(shadow);
-            asd.transform.position = newPos;
-            yield return new WaitForSeconds(.2f);
-            Destroy(asd);
+            temp = Instantiate(shadow);
+            temp.transform.position = newPos;
+
+            yield return new WaitForSeconds(Random.Range(.3f, .7f));
+            Destroy(temp);
             transform.position = newPos;
         }
     }
@@ -53,7 +57,10 @@ public class EnemyFive : RandomWalkingEnemy
         else if (!aimer.IsVisible())
             aimer.ResetTarget();
         aimer.FollowTarget();
+    }
 
-
+    private void OnDestroy()
+    {
+        Destroy(temp);
     }
 }
