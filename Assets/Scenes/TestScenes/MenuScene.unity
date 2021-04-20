@@ -1363,7 +1363,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0.5}
   m_AnchorMax: {x: 1, y: 0.5}
-  m_AnchoredPosition: {x: -0.000061035156, y: -261}
+  m_AnchoredPosition: {x: 0, y: -261}
   m_SizeDelta: {x: 150, y: 150}
   m_Pivot: {x: 1, y: 0.5}
 --- !u!114 &455041227
@@ -7921,6 +7921,13 @@ MonoBehaviour:
   models:
   - {fileID: 1380073103704504396}
   - {fileID: 8116496211075875085}
+  osmans:
+  - index: 0
+    model: {fileID: 1380073103704504396}
+    charName: Gunner
+  - index: 1
+    model: {fileID: 8116496211075875085}
+    charName: Archer
 --- !u!1 &1318789513
 GameObject:
   m_ObjectHideFlags: 0
@@ -14052,7 +14059,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1903086119}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1.9589272, y: 1.567174, z: -2.0279446}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1292868759}
@@ -28333,7 +28340,7 @@ GameObject:
   - component: {fileID: 1380073103704824872}
   - component: {fileID: 1380073103714101988}
   m_Layer: 0
-  m_Name: TT_Crossbowman
+  m_Name: Gunner
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -37275,7 +37282,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3672272915850265702}
   m_LocalRotation: {x: 0, y: 0.9914449, z: -0.13052616, w: 0}
-  m_LocalPosition: {x: -2, y: 7.01, z: 15}
+  m_LocalPosition: {x: -2, y: 7, z: 15}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 748370475}

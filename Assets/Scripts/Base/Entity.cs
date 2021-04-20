@@ -52,6 +52,7 @@ public abstract class Entity : MonoBehaviour
     public bool TakeDamage(DamageReport damageReport)
     {
         hp -= damageReport.damage;
+
         if (hp <= 0)
         {
             Death(damageReport.attacker);

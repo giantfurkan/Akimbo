@@ -25,13 +25,21 @@ public class GameManager : Singleton<GameManager>
 
     LevelInfoAssetSO levelInfoAsset;
 
+    private void OnEnable()
+    {
+        UIManager.OnVariableChange += SelectPlayer;
+    }
+
     private new void Awake()
     {
         base.Awake();
 
-        levelManager = FindObjectOfType<LevelManager>();
-        enemySpawner = FindObjectOfType<EnemySpawner>();
-        obstacleSpawner = FindObjectOfType<ObstacleSpawner>();
+        if (levelManager == null)
+            levelManager = FindObjectOfType<LevelManager>();
+        if (enemySpawner == null)
+            enemySpawner = FindObjectOfType<EnemySpawner>();
+        if (obstacleSpawner == null)
+            obstacleSpawner = FindObjectOfType<ObstacleSpawner>();
 
         levelInfoAsset = Resources.Load<LevelInfoAssetSO>("Level/LevelInfoAsset");
     }
@@ -64,9 +72,11 @@ public class GameManager : Singleton<GameManager>
         currentGameState = GameState.Started;
     }
 
-    public void SelectPlayer(Player playerType)
+    public void SelectPlayer(string characterIndexName)
     {
-        currentPlayer = playerType.GetComponent<Player>();
+        Debug.Log("yep beybi");
+
+        currentPlayer = Resources.Load<Player>(characterIndexName).GetComponent<Player>();
     }
 }
 
