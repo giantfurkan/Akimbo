@@ -13,8 +13,8 @@ public class CameraMovement : MonoBehaviour
 
     private void Update()
     {
-        if (GameManager.CurrentGameState == GameState.Started)
-        {
+        //if (GameManager.CurrentGameState == GameState.Started)
+        //{
             if (player == null)
                 player = GameManager.Instance.Clone.transform;
 
@@ -25,5 +25,5 @@ public class CameraMovement : MonoBehaviour
             if (cameraDestination != null)
                 transform.position = Vector3.Lerp(transform.position, cameraDestination.Value, cameraSpeed);
         }
-    }
+    //}
 }

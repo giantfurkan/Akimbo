@@ -24,10 +24,9 @@ public class UIManager : MonoBehaviour
 
     private int currentIndex = 0;
 
-
     private float offset = 7.5f;
 
-    [SerializeField] List<CharacterInfos> asd;
+    [SerializeField] List<CharacterInfos> characterInfos;
 
     #region Variable Changed Event
     public delegate void OnVariableChangeDelegate(string newVal);
@@ -38,6 +37,11 @@ public class UIManager : MonoBehaviour
     {
         if (GameManager.CurrentGameState == GameState.Init)
         {
+            foreach(var model in characterInfos)
+            {
+                model.model.gameObject.SetActive(false);
+            }
+            characterInfos[currentIndex].model.SetActive(true);
             nextBtn.onClick.AddListener(() => NextButton());
             previousBtn.onClick.AddListener(() => PreviousButton());
         }
@@ -53,18 +57,18 @@ public class UIManager : MonoBehaviour
 
     private void NextButton()
     {
-        if (currentIndex < asd.Count - 1)
+        if (currentIndex < characterInfos.Count - 1)
         {
             currentIndex++;
-            currentCharName = asd[currentIndex].charName;
+            currentCharName = characterInfos[currentIndex].charName;
 
             if (OnVariableChange != null)
                 OnVariableChange(currentCharName);
 
-            var temp = Camera.main.transform;
-            Camera.main.transform.position = new Vector3(temp.position.x - offset, temp.position.y, temp.position.z);
+            characterInfos[currentIndex -1].model.gameObject.SetActive(false);
+            characterInfos[currentIndex].model.gameObject.SetActive(true);
 
-            if (currentIndex == asd.Count - 1) nextBtn.interactable = false;
+            if (currentIndex == characterInfos.Count - 1) nextBtn.interactable = false;
             if (!previousBtn.interactable) previousBtn.interactable = true;
         }
     }
@@ -74,13 +78,13 @@ public class UIManager : MonoBehaviour
         if (currentIndex > 0)
         {
             currentIndex--;
-            currentCharName = asd[currentIndex].charName;
+            currentCharName = characterInfos[currentIndex].charName;
 
             if (OnVariableChange != null)
                 OnVariableChange(currentCharName);
 
-            var temp = Camera.main.transform;
-            Camera.main.transform.position = new Vector3(temp.position.x + offset, temp.position.y, temp.position.z);
+            characterInfos[currentIndex + 1].model.gameObject.SetActive(false);
+            characterInfos[currentIndex].model.gameObject.SetActive(true);
 
             if (currentIndex == 0) previousBtn.interactable = false;
             if (!nextBtn.interactable) nextBtn.interactable = true;

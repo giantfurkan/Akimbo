@@ -9,7 +9,7 @@ public class LevelManager : MonoBehaviour
     public int CurrentLevelIndex { get { return currentLevelIndex; } }
 
     [SerializeField] Animator transition;
-    [SerializeField] float transitionTime = 1f;
+    [SerializeField] float transitionTime = .7f;
 
     private int currentLevelIndex = 0;
 

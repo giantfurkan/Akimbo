@@ -45,7 +45,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   transition: {fileID: 0}
-  transitionTime: 0.2
+  transitionTime: 1
 --- !u!1001 &453033910
 PrefabInstance:
   m_ObjectHideFlags: 0
