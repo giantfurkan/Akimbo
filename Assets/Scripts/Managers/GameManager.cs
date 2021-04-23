@@ -1,8 +1,10 @@
+using System;
 using UnityEngine;
 
 public enum GameState
 {
     Init,
+    FirstLevel,
     Started
 }
 
@@ -14,8 +16,8 @@ public class GameManager : Singleton<GameManager>
 
     static GameState currentGameState;
 
-    public Player Clone { get { return clone; } }
-    Player clone;
+    public static Player Clone { get { return clone; } }
+    static Player clone;
 
     static Player currentPlayer;
 
@@ -28,6 +30,19 @@ public class GameManager : Singleton<GameManager>
     private void OnEnable()
     {
         UIManager.OnVariableChange += SelectPlayer;
+        LevelManager.onGameStateChange += SetGameState;
+    }
+
+    public void SetGameState(GameState newVal)
+    {
+        currentGameState = newVal;
+        Debug.Log(currentGameState);
+    }
+
+    private void OnDisable()
+    {
+        UIManager.OnVariableChange -= SelectPlayer;
+        LevelManager.onGameStateChange -= SetGameState;
     }
 
     private new void Awake()
@@ -58,6 +73,13 @@ public class GameManager : Singleton<GameManager>
                 enemySpawner.SpawnEnemies(levelInfoAsset.levelInfos[levelManager.CurrentLevelIndex]);
                 obstacleSpawner.SpawnObstacles(levelInfoAsset.levelInfos[levelManager.CurrentLevelIndex]);
                 break;
+            case GameState.FirstLevel:
+                if (currentPlayer != null)
+                    clone = Instantiate(currentPlayer);
+                clone.fillHp();
+                enemySpawner.SpawnEnemies(levelInfoAsset.levelInfos[levelManager.CurrentLevelIndex]);
+                obstacleSpawner.SpawnObstacles(levelInfoAsset.levelInfos[levelManager.CurrentLevelIndex]);
+                break;
         }
     }
 
@@ -66,16 +88,8 @@ public class GameManager : Singleton<GameManager>
         currentGameState = GameState.Init;
     }
 
-    public void StartGame()
-    {
-        levelManager.HandleCreateNextLevel();
-        currentGameState = GameState.Started;
-    }
-
     public void SelectPlayer(string characterIndexName)
     {
-        Debug.Log("yep beybi");
-
         currentPlayer = Resources.Load<Player>(characterIndexName).GetComponent<Player>();
     }
 }

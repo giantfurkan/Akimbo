@@ -3,7 +3,7 @@ public class EnemyAimer : Aimer
     Player player;
     private void Awake()
     {
-        player = GameManager.Instance.Clone;
+        player = GameManager.Clone;
     }
     public bool Aim()
     {

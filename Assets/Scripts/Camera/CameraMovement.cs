@@ -13,17 +13,15 @@ public class CameraMovement : MonoBehaviour
 
     private void Update()
     {
-        //if (GameManager.CurrentGameState == GameState.Started)
-        //{
-            if (player == null)
-                player = GameManager.Instance.Clone.transform;
+        if (player == null)
+            player = GameManager.Clone.transform;
 
-            if (Mathf.Abs(player.transform.position.z - transform.position.z) > cameraCatchUpDistance)
-                cameraDestination = new Vector3(transform.position.x, transform.position.y, player.transform.position.z);
-            if (cameraDestination != null && Mathf.Abs(player.transform.position.z - transform.position.z) < cameraCatchUpDistance / 2)
-                cameraDestination = null;
-            if (cameraDestination != null)
-                transform.position = Vector3.Lerp(transform.position, cameraDestination.Value, cameraSpeed);
-        }
-    //}
+        if (Mathf.Abs(player.transform.position.z - transform.position.z) > cameraCatchUpDistance)
+            cameraDestination = new Vector3(transform.position.x, transform.position.y, player.transform.position.z);
+        if (cameraDestination != null && Mathf.Abs(player.transform.position.z - transform.position.z) < cameraCatchUpDistance / 2)
+            cameraDestination = null;
+        if (cameraDestination != null)
+            transform.position = Vector3.Lerp(transform.position, cameraDestination.Value, cameraSpeed);
+    }
+
 }

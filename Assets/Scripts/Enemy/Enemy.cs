@@ -17,13 +17,14 @@ public class Enemy : Entity
     {
         base.Awake();
 
-        player = GameManager.Instance.Clone;
+        hp = maxHp;
+        player = GameManager.Clone;
         enemyHandler = FindObjectOfType<EnemyHandler>();
     }
     protected override void Death(Entity killer)
     {
         Player player = killer as Player;
-        if(player!= null)
+        if (player != null)
         {
             player.AddCoins(coinsToDrop);
         }
@@ -31,8 +32,6 @@ public class Enemy : Entity
         Destroy(gameObject);
 
         player.AddExp(experienceDrop);
-
-
     }
 
     private void ResetTouchingPlayer()
@@ -52,7 +51,7 @@ public class Enemy : Entity
 
     protected void OnTriggerExit(Collider other)
     {
-        if(other.tag == Tags.playerTag)
+        if (other.tag == Tags.playerTag)
         {
             ResetTouchingPlayer();
         }

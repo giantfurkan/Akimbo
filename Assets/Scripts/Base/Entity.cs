@@ -45,7 +45,6 @@ public abstract class Entity : MonoBehaviour
     }
     protected void Awake()
     {
-        hp = MaxHp;
         damagePopUp = Resources.Load<GameObject>("DamagaPopUp");
     }
 
@@ -63,6 +62,11 @@ public abstract class Entity : MonoBehaviour
         indicator.SetDamageText((int)damageReport.damage);
 
         return false;
+    }
+
+    public void fillHp()
+    {
+        hp = MaxHp;
     }
 
     protected abstract void Death(Entity killer);

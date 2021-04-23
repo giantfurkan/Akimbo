@@ -20,7 +20,7 @@ public class UIManager : MonoBehaviour
     [SerializeField] TextMeshProUGUI levelText;
 
     [Space]
-    [SerializeField] Button nextBtn, previousBtn;
+    [SerializeField] Button nextBtn, previousBtn, playBtn;
 
     private int currentIndex = 0;
 
@@ -41,9 +41,11 @@ public class UIManager : MonoBehaviour
             {
                 model.model.gameObject.SetActive(false);
             }
+
             characterInfos[currentIndex].model.SetActive(true);
             nextBtn.onClick.AddListener(() => NextButton());
             previousBtn.onClick.AddListener(() => PreviousButton());
+            playBtn.onClick.AddListener(() => LevelManager.Instance.StartGame());
         }
     }
 
@@ -52,7 +54,7 @@ public class UIManager : MonoBehaviour
         if (levelText != null)
             levelText.text = "Lv" + " " + Player.level.ToString();
         if (bar != null)
-            bar.fillAmount = Player.GetExperienceNormalized();
+            bar.fillAmount = GameManager.Clone.GetExperienceNormalized();
     }
 
     private void NextButton()

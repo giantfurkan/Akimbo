@@ -16,11 +16,11 @@ MonoBehaviour:
   - enemyCount: 2
     enemies:
     - {fileID: 8008220648559628818, guid: bbbf768595574374fa9806ef6a9ec865, type: 3}
-    obstacleDesign: {fileID: 5130283997680655354, guid: 54cee1be319aae048bf6204ddbe333bc, type: 3}
+    obstacleDesign: {fileID: 1607488972443303309, guid: 0598a3e6f66c96f4d81a53d535f469cf, type: 3}
   - enemyCount: 6
     enemies:
     - {fileID: 2649384765778006383, guid: 6877659d40c901345b388c76845ee8a5, type: 3}
-    obstacleDesign: {fileID: 5130283997680655354, guid: 54cee1be319aae048bf6204ddbe333bc, type: 3}
+    obstacleDesign: {fileID: 1607488972443303309, guid: 0598a3e6f66c96f4d81a53d535f469cf, type: 3}
   - enemyCount: 4
     enemies:
     - {fileID: 8008220648559628818, guid: bbbf768595574374fa9806ef6a9ec865, type: 3}
@@ -28,7 +28,7 @@ MonoBehaviour:
   - enemyCount: 3
     enemies:
     - {fileID: 6182981542490500461, guid: 9209cbc13f3e6214c93110c8c011b8d7, type: 3}
-    obstacleDesign: {fileID: 4480923361093792040, guid: 023fb2ba86fe63742983018d686420c7, type: 3}
+    obstacleDesign: {fileID: 1607488972443303309, guid: 0598a3e6f66c96f4d81a53d535f469cf, type: 3}
   - enemyCount: 4
     enemies:
     - {fileID: -149838017941914554, guid: 406c0c978c2a64a418768c2e75e19415, type: 3}

@@ -61,7 +61,7 @@ Camera:
   far clip plane: 100
   field of view: 60
   orthographic: 1
-  orthographic size: 10
+  orthographic size: 9.6
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -100,7 +100,7 @@ MonoBehaviour:
   lensShift: {x: 0, y: 0.6}
   lensShiftProportionalToAspect: 0
   lensTilt: {x: 0, y: 0}
-  positionShift: {x: 0, y: 0.6}
+  positionShift: {x: 0, y: 0.7}
   skew: {x: 0, y: 0}
   aspectScale: {x: 1, y: 1}
   clippingPlaneSkew: {x: 0, y: 0}

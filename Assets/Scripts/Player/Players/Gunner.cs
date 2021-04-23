@@ -49,7 +49,7 @@ public class Gunner : Player
 
         if (Input.GetMouseButtonUp(0))
         {
-            if (bonusRadius > 3)
+            if (bonusRadius > .5)
             {
                 UseBonus();
                 bonusRadius = 0;
@@ -60,13 +60,16 @@ public class Gunner : Player
 
     public void IncreaseBonus()
     {
-        bonusRadius += increaseValuePerBullet;
-        if (bonusRadius > maxRadius)
+        if (walkingState == MovingState.Moving)
         {
-            bonusRadius = maxRadius;
+            bonusRadius += increaseValuePerBullet;
+            if (bonusRadius > maxRadius)
+            {
+                bonusRadius = maxRadius;
+            }
+            var inverseValue = Mathf.InverseLerp(0, maxRadius, bonusRadius);
+            bonusRadiusSprite.transform.localScale = Mathf.Lerp(0, maxSpriteScale, inverseValue) * Vector3.one;
         }
-        var inverseValue = Mathf.InverseLerp(0, maxRadius, bonusRadius);
-        bonusRadiusSprite.transform.localScale = Mathf.Lerp(0, maxSpriteScale, inverseValue) * Vector3.one;
     }
 
     //todo elini cektigin yere yada kullanmak istedigin yerde bir seferligine calistir. UseBonus();
@@ -81,7 +84,7 @@ public class Gunner : Player
     {
         var center = transform.position;
         var RaycastHit = Physics.SphereCastAll(center, bonusRadius, Vector3.one, 100);
-  
+
         foreach (RaycastHit hit in RaycastHit)
         {
             var bullet = hit.collider.GetComponent<Shell>(); //todo kendi mermin yok olursa buraya bak
@@ -92,4 +95,6 @@ public class Gunner : Player
             }
         }
     }
+
+
 }

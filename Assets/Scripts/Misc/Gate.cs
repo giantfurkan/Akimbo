@@ -4,10 +4,11 @@ using UnityEngine;
 
 public class Gate : MonoBehaviour
 {
-    [SerializeField] List<GameObject> gateDoor;
-
     public delegate void NextLevel();
     public static event NextLevel handleNextLevel;
+
+    Collider col;
+    Animator anim;
 
     private void OnEnable()
     {
@@ -17,27 +18,24 @@ public class Gate : MonoBehaviour
     private void OnDisable()
     {
         EnemyHandler.levelCleared -= GateOpen;
-
     }
+
     private void Awake()
     {
-        foreach (Transform child in transform)
-        {
-            gateDoor.Add(child.gameObject);
-        }
+        col = GetComponent<Collider>();
+        anim = GetComponentInChildren<Animator>();
     }
+
     private void GateOpen()
     {
-        foreach (var door in gateDoor)
-        {
-            door.SetActive(false);
-        }
+        col.isTrigger = true;
+        anim.SetTrigger("GateOpen");
     }
+
     private void OnTriggerEnter(Collider other)
     {
         Player player = other.GetComponent<Player>();
         if (player != null)
             handleNextLevel?.Invoke();
-
     }
 }

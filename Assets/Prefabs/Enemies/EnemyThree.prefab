@@ -136,7 +136,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 5.5
   maxHp: 50
-  hp: 0
+  hp: 50
   attackSpeed: 0
   damage: 10
   damagePopUp: {fileID: 0}

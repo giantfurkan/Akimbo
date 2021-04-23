@@ -4,8 +4,11 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class LevelManager : MonoBehaviour
+public class LevelManager : Singleton<LevelManager>
 {
+    public delegate void OnGameStateChange(GameState newVal);
+    public static event OnGameStateChange onGameStateChange;
+
     public int CurrentLevelIndex { get { return currentLevelIndex; } }
 
     [SerializeField] Animator transition;
@@ -25,8 +28,10 @@ public class LevelManager : MonoBehaviour
         Gate.handleNextLevel -= HandleCreateNextLevel;
     }
 
-    private void Awake()
+    private new void Awake()
     {
+        base.Awake();
+
         currentLevelIndex = SceneManager.GetActiveScene().buildIndex;
         levelInfoAsset = Resources.Load<LevelInfoAssetSO>("Level/LevelInfoAsset");
         transition = GetComponentInChildren<Animator>();
@@ -35,15 +40,27 @@ public class LevelManager : MonoBehaviour
     public void HandleCreateNextLevel()
     {
         ++currentLevelIndex;
+
         if (levelInfoAsset.levelInfos.Count >= currentLevelIndex)
         {
             LoadNextLevel(currentLevelIndex);
+
+            if (onGameStateChange != null && GameManager.CurrentGameState != GameState.Started)
+                onGameStateChange(GameState.Started);
         }
     }
 
     public void LoadNextLevel(int level)
     {
         StartCoroutine(LoadLevel(level));
+    }
+
+    public void StartGame()
+    {
+        StartCoroutine(LoadLevel(1));
+
+        if (onGameStateChange != null)
+            onGameStateChange(GameState.FirstLevel);
     }
 
     IEnumerator LoadLevel(int level)

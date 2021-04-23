@@ -5,10 +5,6 @@ using UnityEngine.Events;
 
 public class Player : Entity
 {
-
-    public static Player Instance;
-    protected PlayerAimer aimer;
-
     public PetController petPrefab;
 
     public static int level;
@@ -16,10 +12,10 @@ public class Player : Entity
     public static int[] nextLevelExp;
     private int maxLevel;
 
-
-
     public delegate void OnLevelUp();
     public static event OnLevelUp onLevelUp;
+
+    protected PlayerAimer aimer;
 
     [SerializeField] long coins = 0;
 
@@ -27,8 +23,8 @@ public class Player : Entity
 
     InputDataSO input;
 
-    [SerializeField] Animator anim;
-    [SerializeField] float moveMagnitude;
+    Animator anim;
+    float moveMagnitude;
 
 
     protected new void Awake()
@@ -46,7 +42,6 @@ public class Player : Entity
     }
     private void Start()
     {
-        level = 1;
         maxLevel = 10;
         nextLevelExp = new int[maxLevel + 1];
         nextLevelExp[1] = 1000;
@@ -84,7 +79,7 @@ public class Player : Entity
         anim.SetFloat("MoveSpeed", moveMagnitude);
     }
 
-    public static float GetExperienceNormalized()
+    public float GetExperienceNormalized()
     {
         return (float)currentExp / nextLevelExp[level];
     }

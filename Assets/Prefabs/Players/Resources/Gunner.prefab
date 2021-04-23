@@ -17622,7 +17622,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 5
   maxHp: 200
-  hp: 0
+  hp: 100
   attackSpeed: 4
   damage: 25
   damagePopUp: {fileID: 0}
@@ -17631,8 +17631,6 @@ MonoBehaviour:
   onPlayerDeath:
     m_PersistentCalls:
       m_Calls: []
-  anim: {fileID: 0}
-  moveMagnitude: 0
   range: 7.5
   bonusRadius: 0
   bonusRadiusSprite: {fileID: 1295790129577519794}
@@ -17714,7 +17712,7 @@ Transform:
   m_GameObject: {fileID: 3864164039341064682}
   m_LocalRotation: {x: 0.7071068, y: 0, z: 0, w: 0.7071068}
   m_LocalPosition: {x: 0, y: 0.2, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.25, y: 0.25, z: 0.25}
   m_Children: []
   m_Father: {fileID: 2296016699696436594}
   m_RootOrder: 3
@@ -17759,8 +17757,8 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 78626c218f8cc8045a98334a862b41c9, type: 3}
-  m_Color: {r: 1, g: 0.5273675, b: 0, a: 0.79607844}
+  m_Sprite: {fileID: 21300000, guid: 31417ab71f2eb5849b47de621f5f81fe, type: 3}
+  m_Color: {r: 1, g: 0.5273675, b: 0, a: 0.6901961}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
