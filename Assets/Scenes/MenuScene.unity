@@ -1722,9 +1722,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 2114260247}
-        m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
-        m_MethodName: StartGame
+      - m_Target: {fileID: 432181056}
+        m_TargetAssemblyTypeName: LevelManager, Assembly-CSharp
+        m_MethodName: 
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -9818,6 +9818,7 @@ MonoBehaviour:
   levelText: {fileID: 0}
   nextBtn: {fileID: 455041227}
   previousBtn: {fileID: 191597219}
+  playBtn: {fileID: 232989142}
   characterInfos:
   - index: 0
     model: {fileID: 1380073103704504396}
@@ -22219,17 +22220,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2088783224}
   m_Mesh: {fileID: 4300000, guid: 56e0cb6147a5b42658f4ff7594e3e188, type: 3}
---- !u!114 &2114260247 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 2400356501855339658, guid: acd4c79dbb55a0443b6ce744d4b659f5, type: 3}
-  m_PrefabInstance: {fileID: 227643784}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 011113e026459d048ac6d1e8f9ed58db, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1000008261622167
 GameObject:
   m_ObjectHideFlags: 0

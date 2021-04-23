@@ -3,6 +3,7 @@ using DefaultNamespace;
 using UnityEngine;
 using UnityEngine.Events;
 
+[RequireComponent(typeof(PlayerDataHolder))]
 public class Player : Entity
 {
     public PetController petPrefab;

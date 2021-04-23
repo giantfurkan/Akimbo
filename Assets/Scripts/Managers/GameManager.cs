@@ -10,6 +10,9 @@ public enum GameState
 
 public class GameManager : Singleton<GameManager>
 {
+    public delegate void OnLevelCreated();
+    public static event OnLevelCreated onNewLevel;
+
     [Header("Joystick")]
     public Joystick joystick;
     public static GameState CurrentGameState { get { return currentGameState; } }
@@ -70,6 +73,8 @@ public class GameManager : Singleton<GameManager>
             case GameState.Started:
                 if (currentPlayer != null)
                     clone = Instantiate(currentPlayer);
+                if (onNewLevel != null)
+                    onNewLevel?.Invoke();
                 enemySpawner.SpawnEnemies(levelInfoAsset.levelInfos[levelManager.CurrentLevelIndex]);
                 obstacleSpawner.SpawnObstacles(levelInfoAsset.levelInfos[levelManager.CurrentLevelIndex]);
                 break;
