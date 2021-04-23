@@ -254,7 +254,7 @@ MonoBehaviour:
   maxHp: 100
   hp: 100
   attackSpeed: 0
-  damage: 10
+  damage: 13
   damagePopUp: {fileID: 0}
   player: {fileID: 0}
   enemyHandler: {fileID: 0}
@@ -262,7 +262,7 @@ MonoBehaviour:
   waitingTime: 0
   randomTime: 0
   coinsToDrop: 100
-  experienceDrop: 100
+  experienceDrop: 240
   shooter:
   - {fileID: 5558253655886247622}
   - {fileID: 6283693065629218058}

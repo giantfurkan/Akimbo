@@ -17632,7 +17632,7 @@ MonoBehaviour:
   onPlayerDeath:
     m_PersistentCalls:
       m_Calls: []
-  range: 7.5
+  range: 6.5
   bonusRadius: 0
   bonusRadiusSprite: {fileID: 1295790129577519794}
   maxRadius: 3.5

@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Bullet : Shell
 {
-    [SerializeField] private GameObject effect;
+    public GameObject effect;
 
     protected override void OnEnemyCollision(Entity entity)
     {

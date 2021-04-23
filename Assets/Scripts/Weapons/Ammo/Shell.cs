@@ -24,6 +24,8 @@ public abstract class Shell : MonoBehaviour
     {
         if (rigidbody == null)
             rigidbody = GetComponent<Rigidbody>();
+
+        speed = Random.Range(speed - .2f, speed + .7f);
     }
 
     public void Shoot(Shooter shooter, DamageReport damageReport)

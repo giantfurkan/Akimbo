@@ -37,7 +37,7 @@ public class Gunner : Player
             if (Time.time - lastShootTime >= (1 / attackSpeed))
             {
                 lastShootTime = Time.time;
-                shooter.Shoot(new DamageReport(damage, this), this);
+                shooter.Shoot(new DamageReport(Random.Range(damage-5,Damage+5), this), this);
             }
         }
 
@@ -86,10 +86,11 @@ public class Gunner : Player
 
         foreach (RaycastHit hit in RaycastHit)
         {
-            var bullet = hit.collider.GetComponent<Shell>(); //todo kendi mermin yok olursa buraya bak
+            var bullet = hit.collider.GetComponent<Bullet>(); //todo kendi mermin yok olursa buraya bak
             if (bullet)
             {
                 Destroy(bullet.gameObject);
+                Instantiate(bullet.effect, hit.collider.transform.position, Quaternion.identity);
             }
         }
     }

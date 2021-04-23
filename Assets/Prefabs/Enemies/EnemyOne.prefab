@@ -605,20 +605,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e067351e6e7531f48bbfaa695a8a5b9a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 3.5
-  maxHp: 125
-  hp: 125
+  speed: 2.5
+  maxHp: 80
+  hp: 0
   attackSpeed: 1
-  damage: 10
+  damage: 5
   damagePopUp: {fileID: 0}
   player: {fileID: 0}
   enemyHandler: {fileID: 0}
   movingTime: 1
   waitingTime: 1
-  randomTime: 2
+  randomTime: 1
   coinsToDrop: 100
-  experienceDrop: 100
-  movingStateTimer: 0
+  experienceDrop: 180
+  movingStateTimer: 0.25
   agent: {fileID: 0}
 --- !u!65 &7701705860947678978
 BoxCollider:

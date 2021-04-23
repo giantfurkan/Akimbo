@@ -188,7 +188,7 @@ MonoBehaviour:
   waitingTime: 0
   randomTime: 0
   coinsToDrop: 100
-  experienceDrop: 100
+  experienceDrop: 240
   radius: 2
   shadow: {fileID: 1333698833569753976, guid: b36031f0184473842b2e20b7d267ae7c, type: 3}
 --- !u!195 &5495991858329567996

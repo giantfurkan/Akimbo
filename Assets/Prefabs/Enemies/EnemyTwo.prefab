@@ -197,18 +197,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 3.5
-  maxHp: 155
+  maxHp: 125
   hp: 155
-  attackSpeed: 0.5
-  damage: 5
+  attackSpeed: 0.75
+  damage: 12
   damagePopUp: {fileID: 0}
   player: {fileID: 0}
   enemyHandler: {fileID: 0}
-  movingTime: 3
+  movingTime: 1.5
   waitingTime: 0.3
-  randomTime: 0.5
+  randomTime: 0.3
   coinsToDrop: 100
-  experienceDrop: 100
+  experienceDrop: 230
   movingStateTimer: 0.3
   agent: {fileID: 0}
   lastShootTime: 0

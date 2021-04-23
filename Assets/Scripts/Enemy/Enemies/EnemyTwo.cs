@@ -10,6 +10,8 @@ public class EnemyTwo : WalkingEnemy
     {
         base.Awake();
 
+        attackSpeed = Random.Range(attackSpeed - .25f, attackSpeed + .25f);
+
         if (aimer == null)
             aimer = GetComponentInChildren<EnemyAimer>();
         if (shooter == null)

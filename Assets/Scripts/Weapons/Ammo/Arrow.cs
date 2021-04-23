@@ -8,7 +8,7 @@ public class Arrow : Shell
     protected override void OnEnemyCollision(Entity entity)
     {
         entity.TakeDamage(damageReport);
-        var obj = Instantiate(effect, transform.position, Quaternion.identity);
+        Instantiate(effect, transform.position, Quaternion.identity);
         shooter.DeactiveShell(gameObject);
     }
 
