@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.524339, g: 0.69898933, b: 0.7992551, a: 1}
+  m_IndirectSpecularColor: {r: 0.5243388, g: 0.69898987, b: 0.7992579, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -9818,6 +9818,7 @@ MonoBehaviour:
   levelText: {fileID: 0}
   nextBtn: {fileID: 455041227}
   previousBtn: {fileID: 191597219}
+  playBtn: {fileID: 232989142}
   characterInfos:
   - index: 0
     model: {fileID: 1380073103704504396}

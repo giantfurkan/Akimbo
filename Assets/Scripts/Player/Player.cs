@@ -108,7 +108,7 @@ public class Player : Entity
         currentExp -= nextLevelExp[level];
         level++;
 
-        //  AbilityManager.manager.BuildRandomAbility();
+        AbilityManager.manager.BuildRandomAbility();
 
         maxHp = Mathf.RoundToInt(maxHp * 1.2f);
         damage = Mathf.CeilToInt(damage * 1.1f);

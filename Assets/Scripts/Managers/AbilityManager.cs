@@ -32,18 +32,22 @@ namespace DefaultNamespace.Managers
         
         public void BuildRandomAbility()
         {
-            var selectedAbility = abilitySo.abilityDataList[Random.Range(0, abilitySo.abilityDataList.Count)];
-            while (_builtAbility.Contains(selectedAbility))
+            for (int i = 0; i < 3; i++)
             {
-                if (_builtAbility.Count>=abilitySo.abilityDataList.Count)
+                var selectedAbility = abilitySo.abilityDataList[Random.Range(0, abilitySo.abilityDataList.Count)];
+                while (_builtAbility.Contains(selectedAbility))
                 {
-                    break;
+                    if (_builtAbility.Count>=abilitySo.abilityDataList.Count)
+                    {
+                        break;
+                    }
+                    selectedAbility = abilitySo.abilityDataList[Random.Range(0, abilitySo.abilityDataList.Count)];
                 }
-                selectedAbility = abilitySo.abilityDataList[Random.Range(0, abilitySo.abilityDataList.Count)];
+                _builtAbility.Add(selectedAbility);
+                var clone = Instantiate(abilityPrefab, abilityParent);
+                clone.SetButton(selectedAbility);
             }
-            _builtAbility.Add(selectedAbility);
-            var clone = Instantiate(abilityPrefab, abilityParent);
-            clone.SetButton(selectedAbility);
+            
         }
 
         public void ClearAbilities()
