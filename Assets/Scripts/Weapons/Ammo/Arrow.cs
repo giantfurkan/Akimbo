@@ -8,9 +8,8 @@ public class Arrow : Shell
     protected override void OnEnemyCollision(Entity entity)
     {
         entity.TakeDamage(damageReport);
-        Instantiate(effect, transform.position, Quaternion.identity, transform);
-       // shooter.DeactiveShell(gameObject);
-
+        var obj = Instantiate(effect, transform.position, Quaternion.identity);
+        shooter.DeactiveShell(gameObject);
     }
 
     protected override void OnObstacleCollision(Transform obstacle)
@@ -31,7 +30,7 @@ public class Arrow : Shell
     }
 
     protected override void OnPlayerCollision(Entity entity) { }
-   
+
 }
 
 

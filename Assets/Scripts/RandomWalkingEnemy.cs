@@ -7,7 +7,6 @@ public class RandomWalkingEnemy : Enemy
     private protected NavMeshAgent agent;
     private const float overlapSphereRadius = 3f;
 
-
     protected new void Awake()
     {
         base.Awake();
@@ -40,18 +39,16 @@ public class RandomWalkingEnemy : Enemy
     {
         Vector3 _point;
 
-        if (RandomPoint(point.position, radius, out _point) )
+        if (RandomPoint(point.position, radius, out _point))
         {
-            foreach(var enemy in ene.Enemies)
+            foreach (var enemy in ene.Enemies)
             {
-                float a =Vector3.Distance(enemy.transform.position, _point);
+                float a = Vector3.Distance(enemy.transform.position, _point);
                 if (a > 5f)
                 {
                     return _point;
                 }
             }
-
-           
         }
 
         return point == null ? Vector3.zero : point.position;

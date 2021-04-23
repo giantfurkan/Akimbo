@@ -33,6 +33,11 @@ public abstract class Shell : MonoBehaviour
         rigidbody.velocity = transform.forward * speed;
     }
 
+    public void DeactiveShell()
+    {
+        shooter.DeactiveShell(gameObject);
+    }
+
     protected void OnTriggerEnter(Collider other)
     {
         string tag = other.tag;

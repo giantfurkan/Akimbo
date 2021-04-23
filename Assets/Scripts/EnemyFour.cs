@@ -11,9 +11,8 @@ public class EnemyFour : Enemy
     private new void Awake()
     {
         base.Awake();
-
-    
     }
+
     private void Update()
     {
         if (Time.time - shootTimer >= reloadTimer)

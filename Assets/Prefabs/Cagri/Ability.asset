@@ -17,3 +17,31 @@ MonoBehaviour:
     myType: 0
     value: 10
     abilitySprite: {fileID: 21300000, guid: ae8a5bdf1b3a4f646b47c8aeebd9d598, type: 3}
+  - name: Critical
+    myType: 1
+    value: 10
+    abilitySprite: {fileID: 21300000, guid: 5cb029aab0fa27144a51693e87da6a79, type: 3}
+  - name: Critical
+    myType: 2
+    value: 10
+    abilitySprite: {fileID: 21300000, guid: c675899e3780b9f45a9105c6b1c131a5, type: 3}
+  - name: Critical
+    myType: 3
+    value: 10
+    abilitySprite: {fileID: 21300034, guid: 7ab74e659e1f0a34d9cfec21c478fc12, type: 3}
+  - name: Critical
+    myType: 4
+    value: 10
+    abilitySprite: {fileID: 21300036, guid: 7ab74e659e1f0a34d9cfec21c478fc12, type: 3}
+  - name: Critical
+    myType: 5
+    value: 10
+    abilitySprite: {fileID: 21300038, guid: 7ab74e659e1f0a34d9cfec21c478fc12, type: 3}
+  - name: Critical
+    myType: 6
+    value: 10
+    abilitySprite: {fileID: 21300040, guid: 7ab74e659e1f0a34d9cfec21c478fc12, type: 3}
+  - name: Critical
+    myType: 7
+    value: 10
+    abilitySprite: {fileID: 21300042, guid: 7ab74e659e1f0a34d9cfec21c478fc12, type: 3}

@@ -19,8 +19,7 @@ public class Bullet : Shell
     {
         entity.TakeDamage(damageReport);
         Instantiate(effect, transform.position, Quaternion.identity);
-
-        //shooter.DeactiveShell(gameObject);
+        shooter.DeactiveShell(gameObject);
     }
 
 }

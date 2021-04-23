@@ -15,7 +15,6 @@ public class Gunner : Player
     public float maxRadius;
     public float increaseValuePerBullet;
     public float maxSpriteScale;
-    //todo sprite ayarlamalari yapilacak 
 
     private new void Awake()
     {
@@ -91,7 +90,6 @@ public class Gunner : Player
             if (bullet)
             {
                 Destroy(bullet.gameObject);
-                Debug.Log(bullet);
             }
         }
     }

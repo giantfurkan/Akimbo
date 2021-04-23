@@ -27,13 +27,13 @@ namespace DefaultNamespace.Managers
         private IEnumerator Start()
         {
             yield return new WaitForEndOfFrame();
-            player = FindObjectOfType<Player>();
+            player = GameManager.Clone;
         }
-        // todo bolum bitimine yazilacak. Abilitymanager.manager.BuildRandomAbility();
+        
         public void BuildRandomAbility()
         {
             var selectedAbility = abilitySo.abilityDataList[Random.Range(0, abilitySo.abilityDataList.Count)];
-            while (!_builtAbility.Contains(selectedAbility))
+            while (_builtAbility.Contains(selectedAbility))
             {
                 if (_builtAbility.Count>=abilitySo.abilityDataList.Count)
                 {

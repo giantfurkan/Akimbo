@@ -31,7 +31,7 @@ public class EnemyFive : RandomWalkingEnemy
     {
         while (hp > 0)
         {
-            yield return new WaitForSeconds(Random.Range(.1f, .3f));
+            yield return new WaitForSeconds(Random.Range(.25f, .5f));
             if (aimer.Target != null)
             {
                 shooter.Shoot(new DamageReport(damage, this));
@@ -42,7 +42,7 @@ public class EnemyFive : RandomWalkingEnemy
             temp = Instantiate(shadow);
             temp.transform.position = newPos;
 
-            yield return new WaitForSeconds(Random.Range(.3f, .7f));
+            yield return new WaitForSeconds(Random.Range(.6f, 1.1f));
             Destroy(temp);
             transform.position = newPos;
         }

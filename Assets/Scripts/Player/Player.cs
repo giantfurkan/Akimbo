@@ -2,6 +2,7 @@ using System;
 using DefaultNamespace;
 using UnityEngine;
 using UnityEngine.Events;
+using DefaultNamespace.Managers;
 
 [RequireComponent(typeof(PlayerDataHolder))]
 public class Player : Entity
@@ -27,7 +28,6 @@ public class Player : Entity
     Animator anim;
     float moveMagnitude;
 
-
     protected new void Awake()
     {
         base.Awake();
@@ -41,6 +41,7 @@ public class Player : Entity
         if (aimer == null)
             aimer = GetComponentInChildren<PlayerAimer>();
     }
+
     private void Start()
     {
         maxLevel = 10;
@@ -56,6 +57,7 @@ public class Player : Entity
         petClone.targetPlayer = this;
         petClone.transform.position = transform.position + new Vector3(2, 0, -2);
     }
+
     protected void FixedUpdate()
     {
         if (aimer.Target == null)
@@ -93,7 +95,6 @@ public class Player : Entity
         {
             LevelUp();
             onLevelUp?.Invoke();
-
         }
 
         if (level >= maxLevel)
@@ -106,6 +107,8 @@ public class Player : Entity
     {
         currentExp -= nextLevelExp[level];
         level++;
+
+        //  AbilityManager.manager.BuildRandomAbility();
 
         maxHp = Mathf.RoundToInt(maxHp * 1.2f);
         damage = Mathf.CeilToInt(damage * 1.1f);

@@ -13,13 +13,12 @@ MonoBehaviour:
   m_Name: LevelInfoAsset
   m_EditorClassIdentifier: 
   levelInfos:
-  - enemyCount: 2
-    enemies:
-    - {fileID: 8008220648559628818, guid: bbbf768595574374fa9806ef6a9ec865, type: 3}
+  - enemyCount: 0
+    enemies: []
     obstacleDesign: {fileID: 1607488972443303309, guid: 0598a3e6f66c96f4d81a53d535f469cf, type: 3}
-  - enemyCount: 6
+  - enemyCount: 1
     enemies:
-    - {fileID: 2649384765778006383, guid: 6877659d40c901345b388c76845ee8a5, type: 3}
+    - {fileID: 8186694050445647666, guid: 6528238d4a1a5fc4a80a19691c8c8c7e, type: 3}
     obstacleDesign: {fileID: 1607488972443303309, guid: 0598a3e6f66c96f4d81a53d535f469cf, type: 3}
   - enemyCount: 4
     enemies:

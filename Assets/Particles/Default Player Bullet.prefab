@@ -9520,7 +9520,7 @@ GameObject:
   - component: {fileID: 4021103657954561960}
   - component: {fileID: 4021103657954561941}
   m_Layer: 0
-  m_Name: CFXR Hit A (Red) 1
+  m_Name: Default Player Bullet
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -9535,7 +9535,7 @@ Transform:
   m_GameObject: {fileID: 4021103657954561961}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 8, y: 8, z: 8}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 7356675331608156007}
   - {fileID: 3214228149639760243}
