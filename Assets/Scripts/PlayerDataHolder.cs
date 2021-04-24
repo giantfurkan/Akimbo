@@ -1,7 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using DefaultNamespace.Managers;
 public class PlayerDataHolder : MonoBehaviour
 {
     public static float speed;
@@ -14,11 +14,14 @@ public class PlayerDataHolder : MonoBehaviour
     {
         EnemyHandler.levelCleared += SaveData;
         GameManager.onNewLevel += LoadData;
+        AbilityManager.onAbilitySelect += SaveData;
+        
     }
 
     private void OnDisable()
     {
         EnemyHandler.levelCleared -= SaveData;
+        AbilityManager.onAbilitySelect -= SaveData;
         GameManager.onNewLevel -= LoadData;
     }
 

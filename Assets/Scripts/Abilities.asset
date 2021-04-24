@@ -16,35 +16,35 @@ MonoBehaviour:
   - name: Attack Speed
     myType: 0
     value: 0.5
-    abilitySprite: {fileID: 0}
+    abilitySprite: {fileID: 21300000, guid: 3abf14751cfa14b4b88b9926c995eabc, type: 3}
     ammo: {fileID: 0}
   - name: Attack Damage
     myType: 1
     value: 6
-    abilitySprite: {fileID: 0}
+    abilitySprite: {fileID: 21300000, guid: 656e7cb654ce081448de2b761e9c5c51, type: 3}
     ammo: {fileID: 0}
   - name: Health
     myType: 2
     value: 55
-    abilitySprite: {fileID: 0}
+    abilitySprite: {fileID: 21300000, guid: e43c56162c3b38a44a5c5f75004d1637, type: 3}
     ammo: {fileID: 0}
   - name: Move Speed
     myType: 3
     value: 1
-    abilitySprite: {fileID: 0}
+    abilitySprite: {fileID: 21300000, guid: 8544d33f77c66c24b8c7475ce0d41c26, type: 3}
     ammo: {fileID: 0}
   - name: Fire Bullet
     myType: 4
     value: 0
-    abilitySprite: {fileID: 0}
+    abilitySprite: {fileID: 21300000, guid: 39b685d765f73344bb993421ff5d6499, type: 3}
     ammo: {fileID: 0}
   - name: Electric Bullet
     myType: 5
     value: 0
-    abilitySprite: {fileID: 0}
+    abilitySprite: {fileID: 21300000, guid: 45e9bd831dc292a46a586b980b8b718e, type: 3}
     ammo: {fileID: 0}
   - name: Poison Bullet
     myType: 6
     value: 0
-    abilitySprite: {fileID: 0}
+    abilitySprite: {fileID: 21300000, guid: 53f6b6695c08da44599ef262059e2d93, type: 3}
     ammo: {fileID: 0}

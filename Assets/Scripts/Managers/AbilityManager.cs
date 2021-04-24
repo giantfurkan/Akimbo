@@ -8,6 +8,9 @@ namespace DefaultNamespace.Managers
 {
     public class AbilityManager : MonoBehaviour
     {
+        public delegate void OnAbilitySelect();
+        public static event OnAbilitySelect onAbilitySelect;
+
         public static AbilityManager manager;
 
         public AbilitySO abilitySo;
@@ -43,7 +46,7 @@ namespace DefaultNamespace.Managers
         IEnumerator ChoseAbility()
         {
             abilityCanvas.SetActive(true);
-            yield return new WaitForSeconds(1f);
+            yield return new WaitForSeconds(.66f);
             for (int i = 0; i < 3; i++)
             {
                 var selectedAbility = abilitySo.abilityDataList[Random.Range(0, abilitySo.abilityDataList.Count)];
@@ -66,6 +69,7 @@ namespace DefaultNamespace.Managers
             anim.SetTrigger("Close");
             yield return new WaitForSeconds(1f);
             abilityCanvas.SetActive(false);
+            onAbilitySelect?.Invoke();
         }
 
         public void ClearAbilities()

@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 6848954645196659664}
   - component: {fileID: 2876040195509334515}
   m_Layer: 6
-  m_Name: Rocket
+  m_Name: Default Ammo
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -125,6 +125,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 89406e66f82e4ae44ba8110caa009f2d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 25
+  speed: 35
   rigidbody: {fileID: 0}
   effect: {fileID: 4021103657954561961, guid: 7a0d5f6e29810194d86bdd3eecee9871, type: 3}
