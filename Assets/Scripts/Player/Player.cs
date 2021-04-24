@@ -28,6 +28,17 @@ public class Player : Entity
     Animator anim;
     float moveMagnitude;
 
+    bool isLevelUp;
+
+    private void OnEnable()
+    {
+        EnemyHandler.levelCleared += CheckLevelUp;
+    }
+    private void OnDisable()
+    {
+        EnemyHandler.levelCleared -= CheckLevelUp;
+    }
+
     protected new void Awake()
     {
         base.Awake();
@@ -82,6 +93,13 @@ public class Player : Entity
         anim.SetFloat("MoveSpeed", moveMagnitude);
     }
 
+    public void CheckLevelUp()
+    {
+        if (isLevelUp)
+        {
+            AbilityManager.manager.BuildRandomAbility();
+        }
+    }
     public float GetExperienceNormalized()
     {
         return (float)currentExp / nextLevelExp[level];
@@ -94,7 +112,7 @@ public class Player : Entity
         if (currentExp >= nextLevelExp[level] && level < maxLevel)
         {
             LevelUp();
-            onLevelUp?.Invoke();
+            isLevelUp = true;
         }
 
         if (level >= maxLevel)
@@ -107,8 +125,6 @@ public class Player : Entity
     {
         currentExp -= nextLevelExp[level];
         level++;
-
-        AbilityManager.manager.BuildRandomAbility();
 
         maxHp = Mathf.RoundToInt(maxHp * 1.2f);
         damage = Mathf.CeilToInt(damage * 1.1f);
@@ -140,9 +156,6 @@ public class Player : Entity
     {
         switch (target.myType)
         {
-            case AbilityData.AbilityType.CriticalChance:
-                // todo buraya kritik degerini attir asagidakiler gibi.
-                break;
             case AbilityData.AbilityType.AttackSpeed:
                 AttackSpeed += target.value;
                 break;
@@ -156,13 +169,10 @@ public class Player : Entity
             case AbilityData.AbilityType.MoveSpeed:
                 Speed += target.value;
                 break;
-            case AbilityData.AbilityType.Shield:
-                //todo shield ac value suresi olur.
-                break;
             case AbilityData.AbilityType.Fire:
                 //todo Fire
                 break;
-            case AbilityData.AbilityType.Lightning:
+            case AbilityData.AbilityType.Electric:
                 //todo Lightning
                 break;
             default:

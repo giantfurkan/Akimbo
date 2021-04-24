@@ -332,6 +332,7 @@ MonoBehaviour:
   levelText: {fileID: 1064696951891322605}
   nextBtn: {fileID: 0}
   previousBtn: {fileID: 0}
+  playBtn: {fileID: 0}
   characterInfos: []
 --- !u!1 &1064696952472637879
 GameObject:
@@ -760,6 +761,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1064696952061794687}
     m_Modifications:
+    - target: {fileID: 844943680395189914, guid: e4623a1b4b24fd847af40d8f2d56e0ed, type: 3}
+      propertyPath: abilitySo
+      value: 
+      objectReference: {fileID: 11400000, guid: 1b478cd4832b00342aca1c38811812cf, type: 2}
     - target: {fileID: 2311504134619389742, guid: e4623a1b4b24fd847af40d8f2d56e0ed, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0

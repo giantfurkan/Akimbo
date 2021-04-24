@@ -70,6 +70,5 @@ public class LevelManager : Singleton<LevelManager>
         yield return new WaitForSeconds(transitionTime);
 
         SceneManager.LoadScene(level);
-
     }
 }

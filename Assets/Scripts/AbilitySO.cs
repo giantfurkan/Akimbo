@@ -15,17 +15,19 @@ namespace DefaultNamespace
         public string name;
         public enum AbilityType
         {
-            CriticalChance,
             AttackSpeed,
             AttackDamage,
             Health,
             MoveSpeed,
-            Shield,
             Fire,
-            Lightning
+            Electric,
+            Poison
         }
+
         public AbilityType myType;
         public float value;
         public Sprite abilitySprite;
+        public GameObject ammo;
+
     }
 }
