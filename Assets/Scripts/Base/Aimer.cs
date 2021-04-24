@@ -47,6 +47,7 @@ public abstract class Aimer : MonoBehaviour
         distanceToTarget = Vector3.Distance(transform.position, target.position);
         return !Physics.Raycast(transform.position, directionToTarget, distanceToTarget, obstacleMask);
     }
+
     public void ResetTarget()
     {
         target = null;

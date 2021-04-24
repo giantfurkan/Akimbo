@@ -11,6 +11,8 @@ public class Enemy : Entity
     [SerializeField] protected float randomTime;
     [SerializeField] protected int coinsToDrop = 100;
     [SerializeField] protected int experienceDrop = 100;
+    protected SpriteRenderer aimSprite;
+
     protected Player touchingPlayer;
 
     protected new void Awake()
@@ -21,6 +23,7 @@ public class Enemy : Entity
         player = GameManager.Clone;
         enemyHandler = FindObjectOfType<EnemyHandler>();
     }
+
     protected override void Death(Entity killer)
     {
         Player player = killer as Player;

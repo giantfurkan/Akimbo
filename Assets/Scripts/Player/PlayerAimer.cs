@@ -8,11 +8,12 @@ public class PlayerAimer : Aimer
     {
         enemyHandler = FindObjectOfType<EnemyHandler>();
     }
+
     public bool Aim()
     {
         bool success = false;
         minDistance = -1;
-        foreach(var enemies in enemyHandler.Enemies)
+        foreach (var enemies in enemyHandler.Enemies)
         {
             success = IsVisible(enemies.transform);
         }
@@ -21,12 +22,12 @@ public class PlayerAimer : Aimer
 
     public Transform ClosestTarget()
     {
-        Transform closestTarget = null;   
+        Transform closestTarget = null;
 
         float minDistance = float.MaxValue;
         for (int i = 0; i < enemyHandler.Enemies.Count; i++)
         {
-           if(DistanceToTarget(enemyHandler.Enemies[i].transform) < minDistance)
+            if (DistanceToTarget(enemyHandler.Enemies[i].transform) < minDistance)
             {
                 minDistance = DistanceToTarget(enemyHandler.Enemies[i].transform);
                 closestTarget = enemyHandler.Enemies[i].transform;

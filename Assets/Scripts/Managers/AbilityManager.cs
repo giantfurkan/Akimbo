@@ -16,12 +16,17 @@ namespace DefaultNamespace.Managers
 
         public Transform abilityParent;
 
+        public GameObject abilityCanvas;
+        public Animator anim;
+
         private List<AbilityData> _builtAbility = new List<AbilityData>();
 
         public Player player;
         private void Awake()
         {
             manager = this;
+            abilityCanvas.SetActive(false);
+            anim = abilityCanvas.GetComponent<Animator>();
         }
 
         private IEnumerator Start()
@@ -29,15 +34,22 @@ namespace DefaultNamespace.Managers
             yield return new WaitForEndOfFrame();
             player = GameManager.Clone;
         }
-        
+
         public void BuildRandomAbility()
         {
+            StartCoroutine(ChoseAbility());
+        }
+
+        IEnumerator ChoseAbility()
+        {
+            abilityCanvas.SetActive(true);
+            yield return new WaitForSeconds(1f);
             for (int i = 0; i < 3; i++)
             {
                 var selectedAbility = abilitySo.abilityDataList[Random.Range(0, abilitySo.abilityDataList.Count)];
                 while (_builtAbility.Contains(selectedAbility))
                 {
-                    if (_builtAbility.Count>=abilitySo.abilityDataList.Count)
+                    if (_builtAbility.Count >= abilitySo.abilityDataList.Count)
                     {
                         break;
                     }
@@ -47,11 +59,18 @@ namespace DefaultNamespace.Managers
                 var clone = Instantiate(abilityPrefab, abilityParent);
                 clone.SetButton(selectedAbility);
             }
-            
+        }
+
+        IEnumerator CloseAbilityCanvas()
+        {
+            anim.SetTrigger("Close");
+            yield return new WaitForSeconds(1f);
+            abilityCanvas.SetActive(false);
         }
 
         public void ClearAbilities()
         {
+            StartCoroutine(CloseAbilityCanvas());
             var children = abilityParent.transform.GetComponentsInChildren<AbilityButtonContainer>();
             foreach (AbilityButtonContainer child in children)
             {
@@ -59,5 +78,7 @@ namespace DefaultNamespace.Managers
             }
             _builtAbility?.Clear();
         }
+
+
     }
 }
