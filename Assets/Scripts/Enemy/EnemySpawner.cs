@@ -30,7 +30,7 @@ public class EnemySpawner : MonoBehaviour
             do
             {
                 loopBreaker++;
-                spawnPos = new Vector3(Random.Range(-4.5f, 4.5f), 0f, Random.Range(-5f, 9.5f)); // If each level has a different scale, variables can take from SO or Prefabs
+                spawnPos = new Vector3(Random.Range(-4.5f, 4.5f), 0f, Random.Range(-2f, 9.5f)); // If each level has a different scale, variables can take from SO or Prefabs
             } while (CheckCollisions(spawnPos) && loopBreaker < 100); // If there is no spawn position, it maybe try to endless forever
 
             if(loopBreaker < 100)

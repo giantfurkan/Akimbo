@@ -209,7 +209,7 @@ MonoBehaviour:
   waitingTime: 0.3
   randomTime: 0.3
   coinsToDrop: 100
-  experienceDrop: 230
+  experienceDrop: 180
   movingStateTimer: 0.3
   agent: {fileID: 0}
   lastShootTime: 0

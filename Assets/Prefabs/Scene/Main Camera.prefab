@@ -121,4 +121,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 0}
   cameraCatchUpDistance: 2
-  cameraSpeed: 0.004
+  cameraSpeed: 0.008

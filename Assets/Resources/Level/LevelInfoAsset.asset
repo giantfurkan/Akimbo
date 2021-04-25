@@ -27,7 +27,7 @@ MonoBehaviour:
   - enemyCount: 4
     enemies:
     - {fileID: -149838017941914554, guid: 406c0c978c2a64a418768c2e75e19415, type: 3}
-    obstacleDesign: {fileID: 1607488972443303309, guid: 0598a3e6f66c96f4d81a53d535f469cf, type: 3}
+    obstacleDesign: {fileID: 1607488972443303309, guid: e7c4b61600f99504f90b89655116d6b9, type: 3}
   - enemyCount: 5
     enemies:
     - {fileID: 8008220648559628818, guid: bbbf768595574374fa9806ef6a9ec865, type: 3}
@@ -55,12 +55,12 @@ MonoBehaviour:
     - {fileID: 6182981542490500461, guid: 9209cbc13f3e6214c93110c8c011b8d7, type: 3}
     - {fileID: -8634023288282915879, guid: 8f58aac96222be246b244aae68e810ad, type: 3}
     - {fileID: -149838017941914554, guid: 406c0c978c2a64a418768c2e75e19415, type: 3}
-    obstacleDesign: {fileID: 2849582047638234233, guid: 642b8e9e76927ea47a8aa8079d3d44e2, type: 3}
+    obstacleDesign: {fileID: 1607488972443303309, guid: 09cced4f611d2a2458f8e6ac33d4306f, type: 3}
   - enemyCount: 6
     enemies:
     - {fileID: 8008220648559628818, guid: bbbf768595574374fa9806ef6a9ec865, type: 3}
     - {fileID: 2649384765778006383, guid: 6877659d40c901345b388c76845ee8a5, type: 3}
-    obstacleDesign: {fileID: 8760418029885429292, guid: eef42fc3fed4d2c489a19f178c7febbf, type: 3}
+    obstacleDesign: {fileID: 1607488972443303309, guid: e7c4b61600f99504f90b89655116d6b9, type: 3}
   - enemyCount: 6
     enemies:
     - {fileID: 8008220648559628818, guid: bbbf768595574374fa9806ef6a9ec865, type: 3}
@@ -78,9 +78,9 @@ MonoBehaviour:
     - {fileID: 8008220648559628818, guid: bbbf768595574374fa9806ef6a9ec865, type: 3}
     - {fileID: -149838017941914554, guid: 406c0c978c2a64a418768c2e75e19415, type: 3}
     obstacleDesign: {fileID: 2849582047638234233, guid: 642b8e9e76927ea47a8aa8079d3d44e2, type: 3}
-  - enemyCount: 5
+  - enemyCount: 6
     enemies:
     - {fileID: 2649384765778006383, guid: 6877659d40c901345b388c76845ee8a5, type: 3}
     - {fileID: -8634023288282915879, guid: 8f58aac96222be246b244aae68e810ad, type: 3}
     - {fileID: 6182981542490500461, guid: 9209cbc13f3e6214c93110c8c011b8d7, type: 3}
-    obstacleDesign: {fileID: 5130283997680655354, guid: 54cee1be319aae048bf6204ddbe333bc, type: 3}
+    obstacleDesign: {fileID: 1607488972443303309, guid: e7c4b61600f99504f90b89655116d6b9, type: 3}

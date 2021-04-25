@@ -11,6 +11,10 @@ public class PlayerAimer : Aimer
 
     public bool Aim()
     {
+        if (enemyHandler == null)
+        {
+            enemyHandler = FindObjectOfType<EnemyHandler>();
+        }
         bool success = false;
         minDistance = -1;
         foreach (var enemies in enemyHandler.Enemies)

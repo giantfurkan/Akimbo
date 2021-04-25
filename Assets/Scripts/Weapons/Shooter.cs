@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Shooter : MonoBehaviour
 {
-    [SerializeField] GameObject shellPrefab;
+    public GameObject shellPrefab;
     [SerializeField] int poolSize = 20;
     Queue<GameObject> pool;
 

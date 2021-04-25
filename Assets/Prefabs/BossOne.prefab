@@ -2608,7 +2608,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 3
-  maxHp: 450
+  maxHp: 750
   hp: 0
   attackSpeed: 3
   damage: 12

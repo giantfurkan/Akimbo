@@ -9,13 +9,13 @@ public class PlayerDataHolder : MonoBehaviour
     public static float hp;
     public static float attackSpeed;
     public static float damage;
+    public static GameObject bulletPrefab;
 
     private void OnEnable()
     {
         EnemyHandler.levelCleared += SaveData;
         GameManager.onNewLevel += LoadData;
         AbilityManager.onAbilitySelect += SaveData;
-        
     }
 
     private void OnDisable()

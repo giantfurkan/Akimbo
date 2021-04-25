@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Arrow : Shell
+public class Ammo : Shell
 {
     [SerializeField] private GameObject effect;
     protected override void OnEnemyCollision(Entity entity)

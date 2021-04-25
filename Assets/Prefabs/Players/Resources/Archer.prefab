@@ -280,6 +280,7 @@ GameObject:
   - component: {fileID: 3932483326621028780}
   - component: {fileID: 3932483326621028779}
   - component: {fileID: 3932483326621028778}
+  - component: {fileID: 604816439725732912}
   m_Layer: 3
   m_Name: Archer
   m_TagString: Player
@@ -296,7 +297,7 @@ Transform:
   m_GameObject: {fileID: 3932483326621028777}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: -8}
-  m_LocalScale: {x: 0.75, y: 0.75, z: 0.75}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4659530695496190264}
   - {fileID: 3932483327677727969}
@@ -410,16 +411,28 @@ MonoBehaviour:
   speed: 5
   maxHp: 150
   hp: 0
-  attackSpeed: 3
-  damage: 10
+  attackSpeed: 2.5
+  damage: 25
   damagePopUp: {fileID: 0}
   petPrefab: {fileID: 3324555439535177514, guid: 80ed1ff9b9035084ba8f72961bcc2359, type: 3}
+  bulletPrefab: {fileID: 0}
   coins: 0
   onPlayerDeath:
     m_PersistentCalls:
       m_Calls: []
-  anim: {fileID: 0}
-  moveMagnitude: 0
+  isLevelUp: 0
+--- !u!114 &604816439725732912
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3932483326621028777}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8608a87321bba8d4ea9d8adf6064443b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &3932483327677727968
 GameObject:
   m_ObjectHideFlags: 0
@@ -446,7 +459,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3932483327677727968}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -0.27, z: 0.552}
+  m_LocalPosition: {x: 0, y: 0.48, z: 0.552}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 3932483328232380570}

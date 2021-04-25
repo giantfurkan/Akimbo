@@ -14,6 +14,8 @@ public class Player : Entity
     public static int[] nextLevelExp;
     private int maxLevel;
 
+    public GameObject bulletPrefab;
+
     public delegate void OnLevelUp();
     public static event OnLevelUp onLevelUp;
 
@@ -28,7 +30,7 @@ public class Player : Entity
     Animator anim;
     float moveMagnitude;
 
-    bool isLevelUp;
+    public bool isLevelUp;
 
     private void OnEnable()
     {
@@ -67,6 +69,9 @@ public class Player : Entity
         var petClone = Instantiate(petPrefab, transform.parent);
         petClone.targetPlayer = this;
         petClone.transform.position = transform.position + new Vector3(2, 0, -2);
+
+        bulletPrefab = GetComponentInChildren<Shooter>().shellPrefab;
+
     }
 
     protected void FixedUpdate()
@@ -125,6 +130,7 @@ public class Player : Entity
     {
         currentExp -= nextLevelExp[level];
         level++;
+        isLevelUp = true;
 
         maxHp = Mathf.RoundToInt(maxHp * 1.2f);
         damage = Mathf.CeilToInt(damage * 1.1f);
@@ -170,10 +176,12 @@ public class Player : Entity
                 Speed += target.value;
                 break;
             case AbilityData.AbilityType.Fire:
-                //todo Fire
+                bulletPrefab = Resources.Load<GameObject>("FireAmmo");
+                Debug.Log("fire");
                 break;
             case AbilityData.AbilityType.Electric:
-                //todo Lightning
+                bulletPrefab = Resources.Load<GameObject>("ElectricAmmo");
+                Debug.Log("fire");
                 break;
             default:
                 throw new ArgumentOutOfRangeException();
