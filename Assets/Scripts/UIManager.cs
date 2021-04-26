@@ -20,7 +20,9 @@ public class UIManager : MonoBehaviour
     [SerializeField] TextMeshProUGUI levelText;
 
     [Space]
-    [SerializeField] Button nextBtn, previousBtn, playBtn;
+    [SerializeField] Button nextBtn, previousBtn, playBtn, restartBtn;
+
+    [SerializeField] GameObject deathCanvas;
 
     private int currentIndex = 0;
 
@@ -33,11 +35,26 @@ public class UIManager : MonoBehaviour
     public static event OnVariableChangeDelegate OnVariableChange;
     #endregion
 
+    private void OnEnable()
+    {
+        Player.onPlayerDeath += DeathCanvas;
+    }
+    private void OnDisable()
+    {
+        Player.onPlayerDeath -= DeathCanvas;
+    }
+
     private void Start()
     {
+        if (deathCanvas != null)
+        {
+            deathCanvas.SetActive(false);
+            restartBtn.onClick.AddListener(() => GameManager.Instance.Restart());
+        }
+
         if (GameManager.CurrentGameState == GameState.Init)
         {
-            foreach(var model in characterInfos)
+            foreach (var model in characterInfos)
             {
                 model.model.gameObject.SetActive(false);
             }
@@ -46,6 +63,11 @@ public class UIManager : MonoBehaviour
             nextBtn.onClick.AddListener(() => NextButton());
             previousBtn.onClick.AddListener(() => PreviousButton());
             playBtn.onClick.AddListener(() => LevelManager.Instance.StartGame());
+        }
+
+        if (GameManager.CurrentGameState == GameState.Started && GameManager.CurrentGameState == GameState.FirstLevel)
+        {
+
         }
     }
 
@@ -67,7 +89,7 @@ public class UIManager : MonoBehaviour
             if (OnVariableChange != null)
                 OnVariableChange(currentCharName);
 
-            characterInfos[currentIndex -1].model.gameObject.SetActive(false);
+            characterInfos[currentIndex - 1].model.gameObject.SetActive(false);
             characterInfos[currentIndex].model.gameObject.SetActive(true);
 
             if (currentIndex == characterInfos.Count - 1) nextBtn.interactable = false;
@@ -91,5 +113,10 @@ public class UIManager : MonoBehaviour
             if (currentIndex == 0) previousBtn.interactable = false;
             if (!nextBtn.interactable) nextBtn.interactable = true;
         }
+    }
+
+    public void DeathCanvas()
+    {
+        deathCanvas.SetActive(true);
     }
 }

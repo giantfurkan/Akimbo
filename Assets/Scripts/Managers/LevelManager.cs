@@ -41,12 +41,16 @@ public class LevelManager : Singleton<LevelManager>
     {
         ++currentLevelIndex;
 
-        if (levelInfoAsset.levelInfos.Count >= currentLevelIndex)
+        if (levelInfoAsset.levelInfos.Count -1 >= currentLevelIndex)
         {
             LoadNextLevel(currentLevelIndex);
 
             if (onGameStateChange != null && GameManager.CurrentGameState != GameState.Started)
                 onGameStateChange(GameState.Started);
+        }
+        else
+        {
+            RestartGame();
         }
     }
 
@@ -61,6 +65,11 @@ public class LevelManager : Singleton<LevelManager>
 
         if (onGameStateChange != null)
             onGameStateChange(GameState.FirstLevel);
+    }
+
+    public void RestartGame()
+    {
+        StartCoroutine(LoadLevel(0));
     }
 
     IEnumerator LoadLevel(int level)

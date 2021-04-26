@@ -19,11 +19,12 @@ public class Player : Entity
     public delegate void OnLevelUp();
     public static event OnLevelUp onLevelUp;
 
+    public delegate void OnPlayerDeath();
+    public static event OnPlayerDeath onPlayerDeath;
+
     protected PlayerAimer aimer;
 
     [SerializeField] long coins = 0;
-
-    [SerializeField] UnityEvent onPlayerDeath;
 
     InputDataSO input;
 
@@ -149,8 +150,10 @@ public class Player : Entity
 
     protected override void Death(Entity killer)
     {
-        Debug.Log("Player Dead");
+        onPlayerDeath?.Invoke();
+        Destroy(gameObject);
     }
+
 
     public void AddCoins(int amount)
     {

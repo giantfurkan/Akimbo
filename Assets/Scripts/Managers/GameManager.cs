@@ -90,6 +90,7 @@ public class GameManager : Singleton<GameManager>
 
     public void Restart()
     {
+        levelManager.RestartGame();
         currentGameState = GameState.Init;
     }
 

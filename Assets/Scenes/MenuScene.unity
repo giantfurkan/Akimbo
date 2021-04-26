@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.524339, g: 0.69898933, b: 0.7992551, a: 1}
+  m_IndirectSpecularColor: {r: 0.52433777, g: 0.6989876, b: 0.79925376, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -9819,13 +9819,11 @@ MonoBehaviour:
   nextBtn: {fileID: 455041227}
   previousBtn: {fileID: 191597219}
   playBtn: {fileID: 232989142}
+  deathCanvas: {fileID: 0}
   characterInfos:
   - index: 0
     model: {fileID: 1380073103704504396}
     charName: Gunner
-  - index: 1
-    model: {fileID: 8116496211075875085}
-    charName: Archer
 --- !u!1 &1309627863
 GameObject:
   m_ObjectHideFlags: 0
